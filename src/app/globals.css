@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f6ef;
-  --foreground: #0f172a;
+  --background: #f4f5ea;
+  --foreground: #102018;
   --card: rgba(255, 255, 255, 0.82);
-  --card-foreground: #0f172a;
-  --border: rgba(15, 23, 42, 0.08);
-  --muted: #f0f4d6;
-  --muted-foreground: #475569;
-  --primary: #2d5b3f;
-  --primary-foreground: #f8fafc;
-  --accent: #d8ff72;
-  --accent-foreground: #16311f;
-  --ring: rgba(45, 91, 63, 0.35);
+  --card-foreground: #102018;
+  --border: rgba(16, 32, 24, 0.08);
+  --muted: #edf2d7;
+  --muted-foreground: #5f6d63;
+  --primary: #2f6a49;
+  --primary-foreground: #f7faf8;
+  --accent: #d9ff64;
+  --accent-foreground: #18301f;
+  --ring: rgba(47, 106, 73, 0.35);
   --danger: #b91c1c;
 }
 
@@ -44,9 +44,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(216, 255, 114, 0.55), transparent 28%),
-    radial-gradient(circle at top right, rgba(45, 91, 63, 0.12), transparent 24%),
-    linear-gradient(180deg, #fbfbee 0%, #f6f6ef 40%, #eef2d8 100%);
+    radial-gradient(circle at top left, rgba(217, 255, 100, 0.45), transparent 24%),
+    radial-gradient(circle at top right, rgba(47, 106, 73, 0.12), transparent 24%),
+    linear-gradient(180deg, #fafbf1 0%, #f4f5ea 36%, #edf2d9 100%);
   color: var(--foreground);
 }
 
@@ -74,14 +74,34 @@ button {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.25), transparent 35%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent 36%),
     repeating-linear-gradient(
       90deg,
       transparent,
-      transparent 40px,
-      rgba(45, 91, 63, 0.03) 40px,
-      rgba(45, 91, 63, 0.03) 41px
+      transparent 34px,
+      rgba(47, 106, 73, 0.03) 34px,
+      rgba(47, 106, 73, 0.03) 35px
     );
+}
+
+.app-screen {
+  width: 100%;
+  max-width: 430px;
+  margin-inline: auto;
+}
+
+@media (max-width: 640px) {
+  .page-frame::before {
+    background:
+      linear-gradient(150deg, rgba(255, 255, 255, 0.32), transparent 38%),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 22px,
+        rgba(47, 106, 73, 0.028) 22px,
+        rgba(47, 106, 73, 0.028) 23px
+      );
+  }
 }
 
 @keyframes pulse-line {
@@ -114,4 +134,3 @@ button {
 .animate-rise-in {
   animation: rise-in 0.45s ease-out both;
 }
-

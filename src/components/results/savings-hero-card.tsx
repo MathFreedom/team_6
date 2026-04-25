@@ -1,6 +1,6 @@
 import { TrendingDown } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils/currency";
 
 export function SavingsHeroCard({
@@ -13,27 +13,22 @@ export function SavingsHeroCard({
   action: "switch" | "wait";
 }) {
   return (
-    <Card className="overflow-hidden">
-      <CardContent className="space-y-4 p-7">
-        <Badge variant={action === "switch" ? "accent" : "outline"}>
+    <Card className="overflow-hidden border-primary/10">
+      <CardContent className="space-y-4 p-6">
+        <Badge variant={action === "switch" ? "accent" : "outline"} className="w-fit">
           {action === "switch" ? "Switch recommandé" : "Surveillance recommandée"}
         </Badge>
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm text-muted-foreground">Économie estimée</p>
-            <div className="font-[var(--font-display)] text-5xl font-semibold">
-              {formatCurrency(annualSavings)}
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">
-              soit environ {formatCurrency(monthlySavings)} par mois
-            </p>
+            <div className="font-[var(--font-display)] text-4xl font-semibold sm:text-5xl">{formatCurrency(annualSavings)}</div>
+            <p className="mt-2 text-sm text-muted-foreground">soit environ {formatCurrency(monthlySavings)} par mois</p>
           </div>
-          <div className="rounded-full bg-accent p-4 text-accent-foreground">
-            <TrendingDown className="size-7" />
+          <div className="rounded-full bg-accent p-3 text-accent-foreground sm:p-4">
+            <TrendingDown className="size-6 sm:size-7" />
           </div>
         </div>
       </CardContent>
     </Card>
   );
 }
-

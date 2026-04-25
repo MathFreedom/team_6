@@ -26,7 +26,7 @@ Le JSON attendu:
 }`;
 
 export function buildDecisionPrompt(payload: string) {
-  return `Tu es l'agent de décision de WattSwitch.
+  return `Tu es l'agent de décision de Nova.
 Tu recommandes un changement de fournisseur d'électricité en France uniquement si cela respecte strictement les préférences utilisateur.
 Réponds uniquement en JSON valide.
 

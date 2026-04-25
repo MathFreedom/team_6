@@ -30,11 +30,11 @@ export default function SwitchPage() {
   }, [comparison, hydrated, router]);
 
   if (!hydrated) {
-    return <Skeleton className="h-[520px] w-full" />;
+    return <Skeleton className="app-screen h-[520px] w-full" />;
   }
 
   if (!comparison?.bestOffer || comparison.action !== "switch") {
-    return <Skeleton className="h-[520px] w-full" />;
+    return <Skeleton className="app-screen h-[520px] w-full" />;
   }
 
   const confirmSwitch = () => {
@@ -59,13 +59,16 @@ export default function SwitchPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="app-screen space-y-4">
       <ProgressStepper currentPath="/switch" />
       <Card>
-        <CardHeader>
-          <CardTitle>Confirmer le switch</CardTitle>
+        <CardHeader className="space-y-3">
+          <CardTitle className="text-2xl">Choisissez le mode d'exécution</CardTitle>
+          <p className="text-sm text-muted-foreground">
+            Une fois le mode choisi, Nova simule la suite du workflow de souscription.
+          </p>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-5">
           <div className="rounded-[24px] border border-primary/25 bg-primary/7 p-5">
             <div className="font-semibold">
               {comparison.bestOffer.providerName} · {comparison.bestOffer.offerName}
@@ -75,28 +78,34 @@ export default function SwitchPage() {
               {formatCurrency(comparison.annualSavingsEur)}
             </p>
           </div>
+
           <AutonomySelector value={autonomyLevel} onChange={setAutonomyLevel} />
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button size="lg" variant="accent">Confirmer le switch</Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Dernière validation</DialogTitle>
-                <DialogDescription>
-                  WattSwitch va simuler l'activation du nouveau contrat en mode {autonomyLevel}.
-                </DialogDescription>
-              </DialogHeader>
-              <div className="mt-4 flex justify-end">
-                <Button onClick={confirmSwitch} disabled={isPending}>
-                  {isPending ? <LoaderCircle className="size-4 animate-spin" /> : null}
-                  Lancer la simulation
-                </Button>
-              </div>
-            </DialogContent>
-          </Dialog>
         </CardContent>
       </Card>
+
+      <div className="sticky bottom-3">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button size="lg" variant="accent" className="w-full">
+              Confirmer le switch
+            </Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Dernière validation</DialogTitle>
+              <DialogDescription>
+                Nova va simuler l'activation du nouveau contrat en mode {autonomyLevel}.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-4 flex justify-end">
+              <Button onClick={confirmSwitch} disabled={isPending}>
+                {isPending ? <LoaderCircle className="size-4 animate-spin" /> : null}
+                Lancer la simulation
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
     </div>
   );
 }

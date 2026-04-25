@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-WattSwitch — a Next.js 15 (App Router) PWA for the Paris Fintech Hackathon 2026. It helps a French household check whether they overpay for electricity, compares them against a curated dataset of French offers, then simulates a switch with a human-in-the-loop autonomy level (`Alerte`, `Assistant`, `Autopilot`).
+Nova — a Next.js 15 (App Router) PWA for the Paris Fintech Hackathon 2026. It helps a French household check whether they overpay for electricity, compares them against a curated dataset of French offers, then simulates a switch with a human-in-the-loop autonomy level (`Alerte`, `Assistant`, `Autopilot`).
 
 User-facing copy is in **French**; keep all UI strings, recommendation text, and error messages in French.
 
@@ -46,7 +46,7 @@ All Claude calls go through `src/lib/anthropic/client.ts` (`getAnthropicClient` 
 
 ### Client state (`src/lib/store/journey-store.ts`)
 
-Single Zustand store `useJourneyStore` persisted to `localStorage` under key `wattswitch-journey`. It holds `billData`, `preferences`, `comparison`, `switchState`, and the pending onboarding source. `pendingFile` is intentionally **not** persisted (it's a `File`). Use `useJourneyHydrated` from `use-journey-hydrated.ts` before reading persisted state in client components to avoid hydration mismatch.
+Single Zustand store `useJourneyStore` persisted to `localStorage` under key `nova-journey`. It holds `billData`, `preferences`, `comparison`, `switchState`, and the pending onboarding source. `pendingFile` is intentionally **not** persisted (it's a `File`). Use `useJourneyHydrated` from `use-journey-hydrated.ts` before reading persisted state in client components to avoid hydration mismatch.
 
 ### Page flow
 

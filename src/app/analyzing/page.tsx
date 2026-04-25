@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { AnalysisTimeline } from "@/components/onboarding/analysis-timeline";
 import { ProgressStepper } from "@/components/layout/progress-stepper";
 import { ErrorState } from "@/components/feedback/error-state";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useJourneyStore } from "@/lib/store/journey-store";
 
 export default function AnalyzingPage() {
@@ -79,18 +79,26 @@ export default function AnalyzingPage() {
   }, [billData, pendingFile, pendingSource, router, setBillData, setPendingFile, setPendingSource]);
 
   return (
-    <div className="space-y-6">
+    <div className="app-screen space-y-4">
       <ProgressStepper currentPath="/analyzing" />
       {error ? (
         <ErrorState title="Analyse interrompue" message={error} />
       ) : (
         <>
-          <AnalysisTimeline currentStep={currentStep} />
           <Card>
-            <CardContent className="p-6 text-sm text-muted-foreground">
-              {pendingSource === "enedis"
-                ? "Connexion Enedis simulée en cours. Le profil Linky est transformé en profil de comparaison."
-                : "OCR en cours. Claude lit votre facture, structure les données puis calcule votre coût annuel actuel."}
+            <CardHeader className="space-y-2">
+              <CardTitle className="text-2xl">Nova prépare votre profil</CardTitle>
+              <p className="text-sm text-muted-foreground">
+                L'app reste volontairement simple: une seule tâche à la fois, avec un retour clair sur ce qui est en train d'être fait.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <AnalysisTimeline currentStep={currentStep} />
+              <div className="rounded-[24px] border border-border bg-white/70 p-4 text-sm text-muted-foreground">
+                {pendingSource === "enedis"
+                  ? "Connexion Enedis simulée en cours. Le profil Linky est transformé en profil de comparaison."
+                  : "OCR en cours. La facture est lue, structurée puis convertie en coût annuel et données contractuelles."}
+              </div>
             </CardContent>
           </Card>
         </>
@@ -98,4 +106,3 @@ export default function AnalyzingPage() {
     </div>
   );
 }
-

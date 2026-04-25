@@ -28,7 +28,7 @@ export function PwaInstallPrompt() {
     <Card>
       <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <div className="font-semibold">Installer WattSwitch</div>
+          <div className="font-semibold">Installer Nova</div>
           <p className="text-sm text-muted-foreground">Ajoutez la PWA à votre écran d'accueil pour un accès instantané.</p>
         </div>
         <Button

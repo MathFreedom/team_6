@@ -17,12 +17,12 @@ const displayFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "WattSwitch",
-  description: "L'agent qui optimise votre électricité en moins de 60 secondes.",
-  applicationName: "WattSwitch",
+  title: "Nova - Agent IA mobile pour réduire vos charges récurrentes",
+  description: "Une expérience mobile guidée pour connecter votre énergie, comparer le marché et lancer le bon switch.",
+  applicationName: "Nova",
   appleWebApp: {
     capable: true,
-    title: "WattSwitch",
+    title: "Nova",
     statusBarStyle: "default",
   },
 };
@@ -34,11 +34,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${bodyFont.variable} ${displayFont.variable} page-frame bg-background font-[var(--font-body)] text-foreground antialiased`}>
+      <body
+        className={`${bodyFont.variable} ${displayFont.variable} page-frame bg-background font-[var(--font-body)] text-foreground antialiased`}
+      >
         <Providers>
-          <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 sm:px-6">
+          <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-3 pb-4 sm:px-5">
             <AppHeader />
-            <main className="flex-1 py-6 sm:py-8">{children}</main>
+            <main className="flex-1 py-4 sm:py-6">{children}</main>
             <AppFooter />
           </div>
         </Providers>

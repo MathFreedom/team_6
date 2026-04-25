@@ -8,17 +8,17 @@ const options = [
   {
     value: "alert",
     title: "Alerte",
-    description: "WattSwitch surveille et vous alerte, sans rien préparer.",
+    description: "Nova surveille et vous notifie, sans rien préparer.",
   },
   {
     value: "assistant",
     title: "Assistant",
-    description: "WattSwitch prépare tout et vous laisse confirmer au moment critique.",
+    description: "Nova prépare le dossier et vous laisse confirmer au bon moment.",
   },
   {
     value: "autopilot",
     title: "Autopilot",
-    description: "WattSwitch agit automatiquement dans le cadre défini.",
+    description: "Nova agit automatiquement dans le cadre que vous avez défini.",
   },
 ] satisfies {
   value: AutonomyLevel;
@@ -40,7 +40,7 @@ export function AutonomySelector({
           key={option.value}
           className={cn(
             "flex cursor-pointer items-start gap-3 rounded-[24px] border p-4 transition",
-            value === option.value ? "border-primary bg-primary/7" : "border-border bg-white/60",
+            value === option.value ? "border-primary bg-primary/7" : "border-border bg-white/70",
           )}
         >
           <RadioGroupItem value={option.value} className="mt-1" />
@@ -53,4 +53,3 @@ export function AutonomySelector({
     </RadioGroup>
   );
 }
-

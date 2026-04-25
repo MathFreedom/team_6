@@ -25,7 +25,7 @@ function buildDeterministicDecision(
       annualSavingsEur: Math.max(bestRanked?.annualSavingsEur ?? 0, 0),
       confidenceScore: 0.72,
       recommendationTextFr:
-        "Aucune offre ne crée un gain assez net pour justifier un changement aujourd'hui. WattSwitch continue de surveiller le marché pour vous.",
+        "Aucune offre ne crée un gain assez net pour justifier un changement aujourd'hui. Nova continue de surveiller le marché pour vous.",
       matchedPreferences: [],
       decisionReasons: ["Économie insuffisante pour un switch immédiat"],
     });

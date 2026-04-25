@@ -1,9 +1,9 @@
 {
-  "name": "wattswitch",
+  "name": "nova",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit"
@@ -22,6 +22,7 @@
     "clsx": "2.1.1",
     "lucide-react": "0.542.0",
     "next": "15.5.2",
+    "qrcode.react": "^4.2.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "sonner": "2.0.7",
@@ -38,4 +39,3 @@
     "typescript": "5.9.2"
   }
 }
-

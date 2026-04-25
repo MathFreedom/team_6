@@ -1,6 +1,6 @@
 import type { UserPreferences } from "@/types/energy";
 
-export const APP_NAME = "WattSwitch";
+export const APP_NAME = "Nova";
 
 export const DEFAULT_PREFERENCES: UserPreferences = {
   energyType: "mixed",

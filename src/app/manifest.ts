@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "WattSwitch",
-    short_name: "WattSwitch",
-    description: "Optimisez votre contrat d'électricité en moins de 60 secondes.",
+    name: "Nova",
+    short_name: "Nova",
+    description: "Votre agent IA qui réduit vos charges récurrentes, en pilote automatique. On commence par l'électricité.",
     start_url: "/",
     display: "standalone",
     background_color: "#f6f6ef",

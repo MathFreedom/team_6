@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function PathChoiceCard({
   title,
@@ -18,20 +18,18 @@ export function PathChoiceCard({
   disabled?: boolean;
 }) {
   return (
-    <Card className="h-full">
-      <CardHeader>
+    <Card className="h-full border-primary/10">
+      <CardHeader className="space-y-3 pb-4">
         <div className="flex items-center justify-between gap-3">
-          <CardTitle>{title}</CardTitle>
+          <CardTitle className="text-xl">{title}</CardTitle>
           {recommended ? (
-            <div className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
-              Recommandé
-            </div>
+            <div className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">Recommandé</div>
           ) : null}
         </div>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
-        <Button className="w-full" variant={recommended ? "accent" : "outline"} onClick={onClick} disabled={disabled}>
+        <Button className="w-full justify-center" variant={recommended ? "accent" : "outline"} onClick={onClick} disabled={disabled}>
           {cta}
           <ArrowRight className="size-4" />
         </Button>
@@ -39,4 +37,3 @@ export function PathChoiceCard({
     </Card>
   );
 }
-

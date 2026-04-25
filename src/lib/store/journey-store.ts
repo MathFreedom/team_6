@@ -47,7 +47,7 @@ export const useJourneyStore = create<JourneyState>()(
         }),
     }),
     {
-      name: "wattswitch-journey",
+      name: "nova-journey",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         billData: state.billData,

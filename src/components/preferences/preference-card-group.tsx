@@ -14,7 +14,7 @@ export function PreferenceCardGroup<T extends string>({
   return (
     <div className="space-y-3">
       <h3 className="font-[var(--font-display)] text-lg font-semibold">{title}</h3>
-      <div className="grid gap-3 sm:grid-cols-2">
+      <div className="grid gap-3">
         {options.map((option) => (
           <button
             type="button"
@@ -22,9 +22,7 @@ export function PreferenceCardGroup<T extends string>({
             onClick={() => onChange(option.value)}
             className={cn(
               "rounded-[24px] border p-4 text-left transition",
-              option.value === value
-                ? "border-primary bg-primary/8"
-                : "border-border bg-white/65 hover:bg-white",
+              option.value === value ? "border-primary bg-primary/8" : "border-border bg-white/70 hover:bg-white",
             )}
           >
             <div className="font-semibold">{option.label}</div>
@@ -35,4 +33,3 @@ export function PreferenceCardGroup<T extends string>({
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-﻿# LLM Context - WattSwitch
+﻿# LLM Context - Nova
 
 ## Purpose of This File
 
@@ -22,7 +22,7 @@ Use it as base context before asking an LLM to help with:
 
 ## Project Identity
 
-**Product name:** WattSwitch
+**Product name:** Nova
 
 **Tagline:**  
 "Tu connectes ton contrat une fois, on optimise pour la vie."
@@ -142,7 +142,7 @@ For now, electricity is the MVP entry point because:
 
 ## MVP Solution
 
-WattSwitch is an AI-powered electricity optimization assistant delivered as a PWA.
+Nova is an AI-powered electricity optimization assistant delivered as a PWA.
 
 The system:
 
@@ -344,7 +344,7 @@ The onboarding should borrow the best interaction patterns from Duolingo without
 
 ### Core UX Thesis
 
-WattSwitch should feel like a **mission launch**, not a comparator form.
+Nova should feel like a **mission launch**, not a comparator form.
 
 Recommended framing:
 
@@ -429,7 +429,7 @@ The wow moment is:
 2. **Problem**  
    Very few households switch despite free switching and real savings potential.
 3. **Solution**  
-   WattSwitch is not a comparator. It is an autonomous agent that monitors, decides, and acts.
+   Nova is not a comparator. It is an autonomous agent that monitors, decides, and acts.
 4. **Live Demo**  
    Onboarding -> comparison -> savings -> one-click simulated switch.
 5. **Market / Competition**  
@@ -439,7 +439,7 @@ The wow moment is:
 7. **B2G Angle**  
    Same product can be used by municipalities or social services.
 8. **Close**  
-   "WattSwitch - zéro effort, économies visibles, décision assistée."
+   "Nova - zéro effort, économies visibles, décision assistée."
 
 ### Demo Wow Moments
 
@@ -478,7 +478,7 @@ Pitch line:
 
 ## Key Differentiators
 
-| Existing Tools | WattSwitch |
+| Existing Tools | Nova |
 |---|---|
 | One-shot comparison | Continuous autonomous logic |
 | Same ranking for everyone | Preference-weighted recommendation |
@@ -487,9 +487,9 @@ Pitch line:
 | Opaque ranking | Explanation tied to user priorities |
 | Informational only | Action-oriented simulated switch |
 
-### WattSwitch vs papernest
+### Nova vs papernest
 
-| Dimension | papernest | WattSwitch |
+| Dimension | papernest | Nova |
 |---|---|---|
 | Price for user | Free but opaque | Free and transparent |
 | Process | Human call center | Fast AI-first flow |
@@ -500,7 +500,7 @@ Pitch line:
 
 Pitch-ready line:
 
-**"papernest vous met en ligne avec un conseiller. WattSwitch vous montre toutes les offres, classées selon vos critères, en 60 secondes."**
+**"papernest vous met en ligne avec un conseiller. Nova vous montre toutes les offres, classées selon vos critères, en 60 secondes."**
 
 ---
 
@@ -576,7 +576,7 @@ Avoid:
 ## Reusable Prompt Block
 
 ```text
-You are helping me build WattSwitch - an autonomous electricity optimization agent for the Paris Fintech Hackathon 2026.
+You are helping me build Nova - an autonomous electricity optimization agent for the Paris Fintech Hackathon 2026.
 
 Repo truth:
 - Next.js App Router PWA in TypeScript
@@ -613,7 +613,7 @@ Constraints:
 ## Short Version
 
 ```text
-WattSwitch is a PWA for the Paris Fintech Hackathon 2026 that helps French consumers optimize electricity bills in under 60 seconds.
+Nova is a PWA for the Paris Fintech Hackathon 2026 that helps French consumers optimize electricity bills in under 60 seconds.
 
 Current repo truth:
 - mocked Enedis flow

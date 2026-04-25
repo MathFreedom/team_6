@@ -25,38 +25,41 @@ export default function SuccessPage() {
   }, [hydrated, router, switchState]);
 
   if (!hydrated) {
-    return <Skeleton className="h-[520px] w-full" />;
+    return <Skeleton className="app-screen h-[520px] w-full" />;
   }
 
   if (!switchState) {
-    return <Skeleton className="h-[520px] w-full" />;
+    return <Skeleton className="app-screen h-[520px] w-full" />;
   }
 
   return (
-    <div className="space-y-6">
+    <div className="app-screen space-y-4">
       <ProgressStepper currentPath="/success" />
       <Card>
-        <CardContent className="space-y-5 p-8">
-          <div className="flex items-center gap-4">
+        <CardContent className="space-y-5 p-6">
+          <div className="flex items-start gap-4">
             <div className="rounded-full bg-accent p-4 text-accent-foreground">
               <CheckCircle2 className="size-8" />
             </div>
             <div>
-              <h1 className="font-[var(--font-display)] text-3xl font-semibold">Switch simulé avec succès</h1>
-              <p className="mt-1 text-muted-foreground">
-                Confirmation enregistrée {switchState.confirmedAt ? formatDateTime(switchState.confirmedAt) : "maintenant"}.
+              <h1 className="font-[var(--font-display)] text-3xl font-semibold">Workflow validé</h1>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Confirmation enregistrée{" "}
+                {switchState.confirmedAt ? formatDateTime(switchState.confirmedAt) : "maintenant"}.
               </p>
             </div>
           </div>
+
           <div className="rounded-[24px] border border-primary/25 bg-primary/7 p-5">
             <div className="text-sm text-muted-foreground">Économie annuelle estimée</div>
             <div className="mt-1 font-[var(--font-display)] text-4xl font-semibold">
               {formatCurrency(switchState.estimatedAnnualSavingsEur)}
             </div>
           </div>
+
           <Card className="bg-white/55">
             <CardHeader>
-              <CardTitle>Timeline simulée</CardTitle>
+              <CardTitle>Suite simulée</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {switchState.simulatedTimeline.map((item) => (
@@ -69,17 +72,17 @@ export default function SuccessPage() {
               ))}
             </CardContent>
           </Card>
-          <div className="flex justify-end">
-            <Button
-              variant="accent"
-              onClick={() => {
-                resetJourney();
-                router.push("/");
-              }}
-            >
-              Relancer une mission
-            </Button>
-          </div>
+
+          <Button
+            variant="accent"
+            className="w-full"
+            onClick={() => {
+              resetJourney();
+              router.push("/");
+            }}
+          >
+            Relancer une mission
+          </Button>
         </CardContent>
       </Card>
     </div>
