@@ -1,11 +1,11 @@
-# LLM Context - Autonomous Financial Optimization Agent
+﻿# LLM Context - WattSwitch
 
 ## Purpose of This File
 
 This file is not a README.
-It is a reusable context document meant to be pasted into LLM prompts so the model immediately understands the project, its MVP scope, constraints, and expected direction.
+It is a reusable context document meant to be pasted into LLM prompts so the model immediately understands the project, its MVP scope, constraints, architecture, pitch angle, and repo truth.
 
-Use it as a base context before asking an LLM to help with:
+Use it as base context before asking an LLM to help with:
 
 - product design
 - feature ideation
@@ -22,260 +22,532 @@ Use it as a base context before asking an LLM to help with:
 
 ## Project Identity
 
-**Project name:** Autonomous Financial Optimization Agent
+**Product name:** WattSwitch
+
+**Tagline:**  
+"Tu connectes ton contrat une fois, on optimise pour la vie."
 
 **MVP short description:**  
-An AI-powered web app that helps users optimize their electricity expenses by analyzing electricity bills, extracting contract data, comparing available offers, estimating savings, and recommending or simulating a switch.
+An AI-powered PWA that helps French consumers optimize their electricity bills by extracting contract data from a bill or a mocked Linky flow, comparing available market offers, estimating savings, and recommending or simulating an autonomous provider switch.
 
 **Current product format:**  
-A lightweight web app accessible through a simple shared link.
+A lightweight installable PWA, mobile-friendly, accessible through a shared link, demo-ready.
 
 **Core MVP promise:**  
-Upload your electricity bill once, and the system shows whether you are overpaying and what a better option could look like.
+Get from onboarding to savings visibility to simulated switch in under 60 seconds.
 
 ---
 
-## MVP Scope
-
-The MVP focuses only on **electricity bills**.
-
-It does **not** try to fully cover:
-
-- telecom
-- internet
-- insurance
-- subscriptions
-- all recurring financial expenses
-
-Those categories belong to the long-term vision, not the current prototype.
-
-The MVP should stay narrow, believable, and demoable.
-
----
-
-## Long-Term Vision
-
-The long-term goal is to build a personal autonomous financial agent that continuously monitors and optimizes all recurring expenses for a user.
-
-In the future, the product could expand beyond electricity into telecom, subscriptions, insurance, and other recurring financial commitments.
-
-For now, electricity is the entry point because it is easier to explain, more concrete, and better suited for a hackathon MVP.
-
----
-
-## Problem Being Solved
-
-Consumers often overpay for electricity because:
-
-- they rarely switch providers
-- electricity pricing is hard to understand
-- contracts and offers are difficult to compare
-- switching feels time-consuming and administrative
-
-Existing comparison tools are limited because they are:
-
-- one-time
-- manual
-- not proactive
-- mostly informational
-
-As a result, users leave savings unrealized.
-
----
-
-## MVP Solution
-
-The MVP is an AI-powered electricity optimization assistant delivered as a simple web app.
-
-The system:
-
-- lets the user upload an electricity bill
-- extracts key structured data from the bill
-- identifies the current provider and pricing details
-- compares the current situation against better market offers
-- estimates potential annual savings
-- recommends whether the user should switch
-- can simulate what an automated optimization flow would look like
-
-For the MVP, recommendation and simulation are enough.
-Full real-world switching can be partially mocked if needed.
-
----
-
-## MVP Features
-
-### 1. Electricity Bill Upload
-
-The user uploads an electricity bill in PDF or image format.
-
-### 2. Data Extraction
-
-The system extracts important information such as:
-
-- provider name
-- tariff or pricing details
-- estimated or stated consumption
-- contract identifiers if available
-
-### 3. Offer Comparison
-
-The system compares the extracted bill data against alternative electricity offers.
-
-### 4. Savings Estimation
-
-The system estimates potential yearly savings if the user switched to a better offer.
-
-### 5. AI Recommendation
-
-The system produces:
-
-- a recommendation
-- a short explanation
-- an estimated savings amount
-- optionally a confidence score
-
-### 6. Demo-Ready Execution Simulation
-
-The MVP may simulate:
-
-- a switch recommendation flow
-- a user approval step
-- a mocked provider change
-
-This is acceptable in hackathon mode as long as it is clearly framed as a prototype.
-
-### 7. Simple Dashboard or Results Page
-
-The app should display:
-
-- current provider summary
-- extracted bill information
-- best detected offer
-- estimated savings
-- recommendation outcome
-
-The interface should feel clean, fast, and trustworthy.
-
----
-
-## Product Format
-
-This is **not** a native mobile app for the MVP.
-
-It should be framed as:
-
-- a lightweight web app
-- easy to open through a link
-- simple to demo during a pitch
-- faster to build than a full mobile product
-
-If needed, it can later evolve into:
-
-- a full web platform
-- a mobile app
-- an automated recurring optimization agent
-
----
-
-## Architecture Direction
-
-The product can still be framed with a multi-agent logic, even in MVP form.
-
-Suggested agent roles:
-
-- **Onboarding Agent**: reads and structures electricity bill data
-- **Watcher Agent**: compares the extracted profile against available electricity offers
-- **Decision Agent**: determines whether switching appears worthwhile
-- **Executor Agent**: simulates or initiates the switching flow
-
-A central orchestrator coordinates the workflow.
-
-For the MVP, this architecture can be partly conceptual and partly implemented.
-
----
-
-## User Flow
-
-1. User opens the web app via a shared link.
-2. User uploads an electricity bill.
-3. System extracts contract and pricing data.
-4. System compares current plan with available alternatives.
-5. System estimates potential annual savings.
-6. System returns a recommendation with explanation.
-7. Optional: system shows a simulated switch or approval flow.
-
-The experience should be simple, fast, and understandable in a short live demo.
-
----
-
-## Target Users
-
-### MVP Target
-
-- individual consumers paying household electricity bills
-
-### Secondary Users
-
-- busy professionals
-- budget-conscious households
-- early adopters of AI financial tools
-
-### Future Expansion
-
-- consumers optimizing telecom and subscriptions
-- small businesses with recurring utility costs
-
----
-
-## Business Model
-
-Possible future revenue streams:
-
-- provider acquisition commissions
-- subscription fee for continuous optimization
-- premium automation features
-
-For the MVP, the goal is not to fully prove monetization, but to show that the product could become a real business.
-
----
-
-## Key Differentiation
-
-Compared to a traditional electricity comparison tool, this product aims to be:
-
-- more proactive
-- more automated
-- more execution-oriented
-- more intelligent in how it explains recommendations
-
-Even if the MVP is narrower than the long-term vision, it should still suggest the evolution from:
-
-- comparison tool
-
-to:
-
-- autonomous financial optimization agent
+## Current Repo Truth
+
+This section reflects the **actual implementation currently present in the repository** and should override older aspirational assumptions if they conflict.
+
+- The app is implemented as a **Next.js App Router PWA in TypeScript**
+- The current user flow is live end-to-end:
+  `/` -> `/connect` -> `/analyzing` -> `/preferences` -> `/results` -> `/switch` -> `/success`
+- **Enedis is mocked in the current prototype** for demo reliability; there is no live Enedis sandbox OAuth integration in this repo
+- **OCR uses Claude via the Anthropic SDK**, with a demo fallback mode when API access is unavailable
+- Offer comparison is **deterministic in code** using a curated French electricity offers dataset
+- The LLM is used for:
+  - OCR extraction
+  - recommendation wording / decision explanation
+- **No database is used in the MVP implementation**
+- State is stored client-side with persisted local state
+- Switch execution is fully simulated
+- Important guardrails already implemented:
+  - a recommendation marked `wait` cannot be switched
+  - persisted preferences rehydrate correctly after reload
+  - incomplete OCR bills without usable pricing are rejected instead of producing a fake `0 EUR` current bill
 
 ---
 
 ## Hackathon Context
 
-This project is being developed in a hackathon context.
+### Event
 
-That means:
+**Paris Fintech Hackathon 2026** - "Solve with AI"  
+Organized by Sciences Po AI (SpY), ASES France (Stanford x HEC Paris), Google Developer Group Epita.
 
-- some provider integrations may be mocked
-- some offer data may be manually curated or simplified
-- switching steps may be simulated
-- legal and operational details do not need to be production-ready
+- **Date:** April 25-26, 2026
+- **Location:** HEC Paris, Jouy-en-Josas
+- **Duration:** 24 hours
+- **Team size:** 5 people
+- **Participants:** about 150 selected students
+- **Tracks:** B2C, B2B, B2G
 
-What matters most in the prototype:
+### Judging Criteria
 
-- clear user problem
-- obvious AI contribution
-- visible value for the user
-- believable workflow
-- strong demo clarity
+| Criterion | Weight |
+|---|---|
+| Business Viability | 30% |
+| Technical Execution | 25% |
+| Innovation & Originality | 20% |
+| AI Integration | 15% |
+| Pitch & Presentation | 10% |
+
+### Submission Requirements
+
+1. Public GitHub repo with timestamped commits within the 24h window
+2. README
+3. Pitch deck PDF, max 10 slides
+
+---
+
+## MVP Scope
+
+The MVP focuses **only on electricity bills**.
+
+It does **not** cover:
+
+- telecom
+- internet
+- insurance
+- subscriptions
+
+Those belong to the long-term vision.
+
+---
+
+## Problem Being Solved
+
+French consumers massively overpay for electricity because:
+
+- only about 22% have ever switched providers
+- switching is free and legally simple, but inertia is high
+- electricity pricing is hard to compare
+- current competitors are mostly one-shot manual comparators
+- nobody really offers a credible autonomous optimization agent for this category
+
+**Market size framing:** 38M French households x about 300 EUR average annual savings potential = more than EUR11B in unrealized purchasing power.
+
+---
+
+## Long-Term Vision
+
+Build a personal autonomous financial agent that continuously monitors and optimizes recurring expenses:
+
+- electricity
+- telecom
+- subscriptions
+- insurance
+
+For now, electricity is the MVP entry point because:
+
+- switching is legally frictionless in France
+- the value proposition is universal and easy to understand
+- the market is large
+- Linky/Enedis is a credible long-term data source
+
+---
+
+## MVP Solution
+
+WattSwitch is an AI-powered electricity optimization assistant delivered as a PWA.
+
+The system:
+
+1. Lets the user choose between two onboarding paths:
+   - **Primary path - mocked Enedis connect:** a simulated Enedis / Linky flow returns a realistic household profile for a stable demo
+   - **Fallback path - bill upload + OCR:** Claude extracts provider, tariff, consumption, PDL, and contract reference from a PDF or image
+2. Structures the retrieved or extracted data into a normalized household energy profile
+3. Lets the user define optimization preferences
+4. Compares the current plan against available market offers using those preferences
+5. Estimates potential annual savings
+6. Recommends whether the user should switch, with a natural language explanation tailored to the user's priorities
+7. Simulates what an automated switch would look like with a human-in-the-loop confirmation flow
+
+**Demo wow moment:** 60 secondes entre vos données Linky simulées et vos économies affichées à l'écran.
+
+---
+
+## MVP Features
+
+### 1. Mocked Enedis Connection
+
+The user triggers a mocked Enedis / EDF connection flow that simulates a successful Linky retrieval and returns:
+
+- annual consumption
+- tariff option
+- contract power
+- PDL
+- current provider pricing structure
+
+This is the preferred stage-demo path because it is fast and reliable.
+
+### 2. Bill Upload + OCR
+
+If the user prefers not to use the mocked Linky path, they upload a bill in PDF or image format.
+
+Claude extracts:
+
+- provider name
+- tariff type and pricing
+- annual or monthly consumption
+- PDL
+- contract reference
+
+If pricing data cannot be extracted reliably, the bill must be rejected rather than silently priced at zero.
+
+### 3. User Preferences
+
+After retrieval or OCR extraction, the user sets optimization preferences:
+
+- **Energy type:** 100% renewable / mixed / no preference
+- **Price priority:** cheapest possible / best value
+- **Provider reputation:** minimum rating threshold
+- **Tariff stability:** fixed price vs indexed price
+- **Provider origin:** optional preference for French providers
+
+These preferences feed the ranking and decision layer.
+
+### 4. Offer Comparison
+
+The system compares the normalized household profile against a curated French electricity offers dataset and ranks offers based on:
+
+- compatibility
+- annual cost
+- user preferences
+- trust / quality constraints
+
+### 5. Savings Estimation
+
+The system calculates:
+
+- current annual cost
+- projected annual cost with best alternative
+- estimated yearly savings
+
+### 6. AI Recommendation
+
+The Decision Agent produces:
+
+- a `switch` or `wait` recommendation
+- a short natural-language explanation tied to the user's preferences
+- an estimated savings amount
+- a confidence score
+
+Guardrails:
+
+- no switch if savings are too low
+- no switch below reputation threshold
+- no switch if a strict user preference excludes the offer
+- a `wait` result must not be switchable
+
+### 7. Simulated Execution Flow
+
+The user chooses a level of autonomy:
+
+1. **Mode Alerte:** monitor + notify only
+2. **Mode Assistant:** prepare everything, user confirms
+3. **Mode Autopilot:** fully autonomous, opt-in only
+
+For the demo, **Mode Assistant** is the default story.
+
+### 8. Dashboard / Results Page
+
+The dashboard shows:
+
+- current provider summary
+- extracted or retrieved household data
+- selected preferences
+- best detected offer
+- estimated savings
+- recommendation outcome
+- simulated switch path
+
+---
+
+## Product Format
+
+**PWA - not a native app.**
+
+- accessible via shared link
+- mobile-friendly
+- installable
+- fast to demo
+- realistic to build in 24 hours
+
+---
+
+## Architecture
+
+### Multi-Agent System
+
+```text
+ORCHESTRATOR
+|- Onboarding Agent
+|- Watcher Agent
+|- Decision Agent
+`- Executor Agent
+```
+
+**Onboarding Agent**
+
+- Mock Enedis mode: returns a simulated Linky profile
+- OCR mode: uploads bill, extracts data, normalizes structure
+
+**Watcher Agent**
+
+- loads curated offers
+- filters according to user preferences
+- calculates annual cost
+- ranks valid offers
+
+**Decision Agent**
+
+- uses LLM reasoning and guardrails
+- decides `switch` or `wait`
+- produces explanation text
+
+**Executor Agent**
+
+- simulates switch flow and autonomy mode outcome
+
+**Current implementation truth:** plain TypeScript orchestrator, no LangGraph or Mastra in the repo.
+
+---
+
+## Tech Stack
+
+| Layer | Tool | Why |
+|---|---|---|
+| Front | Next.js + Tailwind + shadcn-style components | Fast setup, clean UI, PWA-ready |
+| Agent orchestration | Plain TypeScript orchestrator | Simpler and safer for a 24h MVP |
+| LLM | Claude Sonnet 4.5 | Structured extraction and recommendation wording |
+| Data ingestion (primary) | Mock Enedis flow | Demo reliability |
+| Data ingestion (fallback) | Anthropic SDK / Claude OCR | Reads real electricity bills |
+| Data source | Curated offers dataset | Realistic and controllable |
+| DB | None for MVP | Local persisted state is enough |
+| Notifications | Optional future add-on | Nice-to-have only |
+
+---
+
+## User Flow
+
+1. User opens the PWA
+2. User chooses `Connecter Enedis` or `Importer ma facture`
+3. System retrieves a mocked Linky profile or extracts data from the uploaded bill
+4. User defines optimization preferences
+5. System compares offers in a few seconds
+6. System displays current annual cost, best alternative, and estimated savings
+7. System explains the recommendation
+8. User taps `Switcher pour moi`
+9. System shows a recap and simulates the switch
+
+Total flow target: under 60 seconds.
+
+---
+
+## Onboarding UX Direction
+
+The onboarding should borrow the best interaction patterns from Duolingo without copying its childish tone.
+
+### Core UX Thesis
+
+WattSwitch should feel like a **mission launch**, not a comparator form.
+
+Recommended framing:
+
+- "Lancer mon diagnostic"
+- "Activer mon agent"
+- "Trouver mes économies en moins de 60 secondes"
+
+The product should feel:
+
+- fast
+- competent
+- slightly gamified
+- premium enough for a money decision
+- never cartoonish
+
+### What To Reuse From Duolingo
+
+- one main action per screen
+- clear progress visibility
+- immediate feedback
+- card-based choices
+- short direct copy
+- satisfying reveal at the end
+
+### What To Avoid
+
+- fake streaks
+- childish mascots
+- over-gamification
+- long forms
+- generic fintech dashboard aesthetics
+
+### Suggested Flow
+
+1. **Landing**
+   - Headline: "On peut vérifier si vous surpayez votre électricité en moins de 60 secondes."
+   - CTA: "Lancer le diagnostic"
+2. **Choose a Path**
+   - Voie express: mocked Enedis
+   - Voie manuelle: bill upload
+3. **Live Analysis**
+   - lecture du contrat
+   - analyse de la consommation
+   - construction du profil énergie
+   - recherche d'offres plus avantageuses
+4. **Preference Cards**
+   - price
+   - green energy
+   - stability
+   - reputation
+   - provider origin
+5. **Final Reveal**
+   - large savings number
+   - recommendation
+   - explanation
+   - switch CTA
+
+### Best Gamification Lever
+
+The best gamification mechanic is **autonomy level progression**:
+
+- Niveau 1 - Alerte
+- Niveau 2 - Assistant
+- Niveau 3 - Autopilot
+
+This is product-real, not fake reward design.
+
+### Strategic Reason
+
+The wow moment is:
+
+**60 secondes entre des données d'énergie structurées, un profil construit automatiquement, et une économie claire affichée à l'écran.**
+
+---
+
+## Pitch Strategy
+
+### Pitch Structure (5 min)
+
+1. **Hook**  
+   "Vous payez trop cher votre électricité. Tout le monde ici aussi. Et personne ne fait rien."
+2. **Problem**  
+   Very few households switch despite free switching and real savings potential.
+3. **Solution**  
+   WattSwitch is not a comparator. It is an autonomous agent that monitors, decides, and acts.
+4. **Live Demo**  
+   Onboarding -> comparison -> savings -> one-click simulated switch.
+5. **Market / Competition**  
+   Huge household market, low switching penetration, competitors are manual and opaque.
+6. **Business Model**  
+   User never pays; provider commission only.
+7. **B2G Angle**  
+   Same product can be used by municipalities or social services.
+8. **Close**  
+   "WattSwitch - zéro effort, économies visibles, décision assistée."
+
+### Demo Wow Moments
+
+1. **Must-have:** mocked Enedis launch -> Linky-like data on screen -> comparison -> savings number
+2. **High impact:** switch recap -> confirmation -> success timeline
+3. **Backup:** OCR path if needed
+
+---
+
+## Dual Track Positioning
+
+### Primary: B2C
+
+Consumers optimizing household electricity spend.
+
+### Secondary: B2G
+
+Municipalities and social services helping vulnerable households reduce energy costs.
+
+---
+
+## Business Model
+
+**Core principle:** the user never pays.
+
+| Revenue Stream | Model | Unit Economics |
+|---|---|---|
+| Provider acquisition commissions | Paid by the winning provider | EUR40-150 per lead |
+| Future premium subscription | Continuous monitoring / broader optimization | Long-term only |
+
+Pitch line:
+
+**"Même modèle de revenus que Selectra et papernest - commission fournisseur - mais sans le biais."**
+
+---
+
+## Key Differentiators
+
+| Existing Tools | WattSwitch |
+|---|---|
+| One-shot comparison | Continuous autonomous logic |
+| Same ranking for everyone | Preference-weighted recommendation |
+| Human call center switching | 3-tier autonomy model |
+| Manual user effort | Fast guided onboarding |
+| Opaque ranking | Explanation tied to user priorities |
+| Informational only | Action-oriented simulated switch |
+
+### WattSwitch vs papernest
+
+| Dimension | papernest | WattSwitch |
+|---|---|---|
+| Price for user | Free but opaque | Free and transparent |
+| Process | Human call center | Fast AI-first flow |
+| Personalization | Weak | Strong |
+| Transparency | Low | High |
+| Speed | 15-30 min | About 60 seconds |
+| Trust model | Advisor-led | User-selected autonomy |
+
+Pitch-ready line:
+
+**"papernest vous met en ligne avec un conseiller. WattSwitch vous montre toutes les offres, classées selon vos critères, en 60 secondes."**
+
+---
+
+## 24-Hour Hackathon Plan
+
+### Team of 5 - Suggested Split
+
+| Role | Focus |
+|---|---|
+| Front-end Lead | App Router flow, landing, results |
+| Front-end Support + Design | components, responsive polish, loading states |
+| Data Ingestion | mocked Enedis path, OCR path |
+| Backend + Agent Logic | comparison engine, decision logic, API routes |
+| Pitch + Demo + QA | pitch deck, demo script, rehearsal, fallback plan |
+
+### Rough Timeline
+
+- **Hour 0-2:** scaffold, schema, API keys, dataset
+- **Hour 2-8:** core build
+- **Hour 8-14:** integration
+- **Hour 14-18:** polish and wow moments
+- **Hour 18-22:** demo prep
+- **Hour 22-24:** submission and final rehearsal
+
+---
+
+## French Market Context
+
+Key facts to cite:
+
+- switching electricity providers in France is free
+- the old provider is automatically terminated by the new one
+- no engagement period, unlimited switches
+- Linky penetration is massive in France
+- Enedis Data Connect is the official long-term data source direction
+- only about 22% of French consumers have ever switched electricity provider
+- ORIAS / broker requirements matter for production, not for hackathon MVP
+
+---
+
+## Regulatory Notes
+
+- Acting on behalf of a user requires a mandate in production
+- Frequent switching may require anti-spam / cooldown guardrails
+- Enedis access requires explicit user consent in production
+- Production registration with Enedis is post-hackathon roadmap, not MVP scope
+- GDPR awareness matters: bill data should not be stored long-term in MVP
 
 ---
 
@@ -283,88 +555,84 @@ What matters most in the prototype:
 
 When helping on this project, optimize for:
 
-- a focused MVP around electricity bills only
-- practical hackathon decisions
-- outputs that are realistic to prototype quickly
+- focused electricity-only MVP
+- practical 24-hour build decisions
 - strong demoability
-- clear user value
-- clean product positioning
-- simple web app flows rather than heavy platform design
+- visible user value in under 60 seconds
+- PWA-friendly flows
+- pitch-ready outputs
+- repo truth over aspirational architecture
 
 Avoid:
 
-- expanding the MVP to too many verticals
-- suggesting a full native app unless explicitly requested
-- overengineering backend complexity
-- generic chatbot ideas with weak fintech value
-- pretending mocked flows are already production-ready
-
----
-
-## Preferred Positioning
-
-This project should currently be framed as:
-
-- a B2C AI fintech MVP
-- focused on electricity bill optimization
-- delivered as a lightweight web app via link
-- centered on bill extraction, offer comparison, savings estimation, and recommendation
-- expandable later into a broader autonomous recurring expense agent
+- expanding into telecom / insurance / subscriptions for MVP
+- overengineering the backend
+- pretending mocked flows are production-ready
+- generic chatbot wrappers with weak product value
+- suggestions that reduce demo reliability
 
 ---
 
 ## Reusable Prompt Block
 
-Copy and paste the block below into your LLM when you need project-aware help:
-
 ```text
-You are helping me build a project called Autonomous Financial Optimization Agent.
+You are helping me build WattSwitch - an autonomous electricity optimization agent for the Paris Fintech Hackathon 2026.
+
+Repo truth:
+- Next.js App Router PWA in TypeScript
+- mocked Enedis onboarding path
+- Claude OCR fallback path
+- deterministic offer comparison
+- local persisted client state
+- simulated switch flow
+- wait recommendations must not be switchable
 
 Current MVP scope:
-This MVP focuses only on electricity bills. It is a lightweight web app that users can access through a simple shared link. The goal is not to build a full native app or a full recurring-expense platform yet.
+- electricity only
+- user chooses mocked Enedis or bill upload
+- system structures contract data
+- user sets preferences
+- engine compares French electricity offers
+- system estimates savings
+- system recommends switch or wait
+- system simulates assisted switch
 
-Product summary:
-Users upload an electricity bill. The system extracts key contract and pricing data, identifies the current provider, compares available electricity offers, estimates yearly savings, and recommends whether switching would be beneficial. Some switching or execution flows may be simulated for the prototype.
+Key differentiators:
+- this is not a generic comparator
+- recommendations are personalized
+- recommendation explains why it matches the user's priorities
+- flow is designed to feel fast, trustworthy, and demoable
 
-MVP features:
-- Electricity bill upload
-- AI-powered bill parsing and data extraction
-- Offer comparison
-- Savings estimation
-- Recommendation with explanation
-- Optional simulated switch flow
-- Simple dashboard or results page
-
-Architecture direction:
-- Onboarding Agent
-- Watcher Agent
-- Decision Agent
-- Executor Agent
-- Central orchestrator
-
-Important constraints:
-- Focus only on electricity for now
-- Keep the scope hackathon-friendly
-- Prefer a lightweight web app over a mobile app
-- Some integrations may be mocked or simplified
-- Prioritize demoability, clarity, and believable user value
-
-Long-term vision:
-Later, the product can expand into telecom, subscriptions, and broader recurring expense optimization, but that is not the MVP.
-
-When answering:
-- stay specific to this electricity MVP
-- avoid unnecessary complexity
-- keep suggestions practical and buildable fast
-- preserve the long-term autonomous agent vision without bloating the MVP
+Constraints:
+- buildable in 24 hours by 5 people
+- optimize for demo clarity and reliability
+- no overengineering
+- preserve the autonomous agent vision without bloating the MVP
 ```
-
----
 
 ## Short Version
 
-If you only want a compact context snippet, use this:
-
 ```text
-Autonomous Financial Optimization Agent is currently a B2C AI fintech MVP focused only on electricity bills. The product is a lightweight web app accessible through a simple link. Users upload an electricity bill, the system extracts contract and pricing data, compares market offers, estimates potential yearly savings, and recommends whether switching would make sense. The prototype may simulate parts of the switching flow. The long-term vision is broader recurring expense automation, but the MVP should stay tightly focused on electricity, demoability, and clear user value.
+WattSwitch is a PWA for the Paris Fintech Hackathon 2026 that helps French consumers optimize electricity bills in under 60 seconds.
+
+Current repo truth:
+- mocked Enedis flow
+- Claude OCR fallback
+- deterministic comparison engine
+- simulated switch
+- no DB
+
+MVP flow:
+- connect mocked Enedis or upload a bill
+- extract or retrieve contract data
+- set preferences
+- compare offers
+- show savings
+- confirm simulated switch
+
+Core differentiation:
+- personalized ranking
+- transparent explanation
+- 3-tier autonomy model
+- fast and reliable demo flow
 ```

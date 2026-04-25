@@ -1,0 +1,211 @@
+[
+  {
+    "id": "edf-tarif-bleu",
+    "providerName": "EDF",
+    "offerName": "Tarif Bleu résidentiel",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 0,
+    "trustpilotRating": 4.6,
+    "tariffType": "regulated",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.194, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.2065, "hcPriceEurPerKwh": 0.1579, "monthlySubscriptionEur": 15.65 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "totalenergies-heures-eco",
+    "providerName": "TotalEnergies",
+    "offerName": "Heures Eco Electricité",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 0,
+    "trustpilotRating": 4.4,
+    "tariffType": "indexed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1783, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.1895, "hcPriceEurPerKwh": 0.1458, "monthlySubscriptionEur": 15.65 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "engie-elec-reference",
+    "providerName": "Engie",
+    "offerName": "Elec Référence 3 ans",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.5,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.2039, "monthlySubscriptionEur": 15.33 },
+      "hpHc": { "hpPriceEurPerKwh": 0.2102, "hcPriceEurPerKwh": 0.167, "monthlySubscriptionEur": 15.33 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "octopus-eco-conso-fixe",
+    "providerName": "Octopus Energy",
+    "offerName": "Eco-conso Fixe",
+    "providerOrigin": "other",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.8,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1909, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.2031, "hcPriceEurPerKwh": 0.1555, "monthlySubscriptionEur": 15.65 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "ekwateur-verte-fixe",
+    "providerName": "Ekwateur",
+    "offerName": "Electricité 100% verte fixe",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.1,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1781, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.1894, "hcPriceEurPerKwh": 0.1456, "monthlySubscriptionEur": 15.65 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "ilek-enrfixe-plus",
+    "providerName": "Ilek",
+    "offerName": "EnRFixe+ Elec",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.6,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.2059, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.219, "hcPriceEurPerKwh": 0.173, "monthlySubscriptionEur": 16.1 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "mint-smart-green",
+    "providerName": "Mint Énergie",
+    "offerName": "Smart & Green",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.7,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.2018, "monthlySubscriptionEur": 18.89 },
+      "hpHc": { "hpPriceEurPerKwh": 0.215, "hcPriceEurPerKwh": 0.1639, "monthlySubscriptionEur": 19.07 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "ohm-extra-eco-vert",
+    "providerName": "OHM Énergie",
+    "offerName": "Extra Eco Vert",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.7,
+    "tariffType": "indexed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1704, "monthlySubscriptionEur": 16.44 },
+      "hpHc": { "hpPriceEurPerKwh": 0.1836, "hcPriceEurPerKwh": 0.1415, "monthlySubscriptionEur": 16.21 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "alpiq-electricite-stable",
+    "providerName": "Alpiq",
+    "offerName": "Électricité Stable",
+    "providerOrigin": "other",
+    "greenEnergyPercent": 0,
+    "trustpilotRating": 4.8,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1752, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.1861, "hcPriceEurPerKwh": 0.1434, "monthlySubscriptionEur": 15.65 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "vattenfall-equilibre",
+    "providerName": "Vattenfall",
+    "offerName": "Équilibre",
+    "providerOrigin": "other",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.1,
+    "tariffType": "indexed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1861, "monthlySubscriptionEur": 16.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.1979, "hcPriceEurPerKwh": 0.1517, "monthlySubscriptionEur": 16.83 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "eni-pleniweb",
+    "providerName": "Eni (Plenitude)",
+    "offerName": "PleniWeb Électricité",
+    "providerOrigin": "other",
+    "greenEnergyPercent": 100,
+    "trustpilotRating": 4.8,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.1736, "monthlySubscriptionEur": 18.05 },
+      "hpHc": { "hpPriceEurPerKwh": 0.1844, "hcPriceEurPerKwh": 0.1422, "monthlySubscriptionEur": 18.05 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "happe-electricite-1-an",
+    "providerName": "Happ-e",
+    "offerName": "Électricité 1 an",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 0,
+    "trustpilotRating": 4.2,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.23, "monthlySubscriptionEur": 15.65 },
+      "hpHc": { "hpPriceEurPerKwh": 0.242, "hcPriceEurPerKwh": 0.188, "monthlySubscriptionEur": 16.25 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  },
+  {
+    "id": "sowee-prix-fixe-3-ans",
+    "providerName": "Sowee",
+    "offerName": "Électricité Prix Fixe 3 ans",
+    "providerOrigin": "french",
+    "greenEnergyPercent": 0,
+    "trustpilotRating": 4,
+    "tariffType": "fixed",
+    "supportedTariffOptions": ["BASE", "HP_HC"],
+    "pricing": {
+      "base": { "unitPriceEurPerKwh": 0.2335, "monthlySubscriptionEur": 12.6 },
+      "hpHc": { "hpPriceEurPerKwh": 0.2504, "hcPriceEurPerKwh": 0.1922, "monthlySubscriptionEur": 13.19 }
+    },
+    "lastCheckedAt": "2026-04-25",
+    "sourceLabel": "Référence marché France 2026"
+  }
+]
+

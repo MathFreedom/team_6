@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120">
+  <rect width="800" height="1120" rx="36" fill="#f8fafc"/>
+  <rect x="62" y="56" width="676" height="96" rx="24" fill="#183925"/>
+  <text x="92" y="116" font-family="Arial, sans-serif" font-size="40" fill="#D8FF72">FACTURE D'ÉLECTRICITÉ</text>
+  <rect x="62" y="196" width="676" height="188" rx="24" fill="#eef2d8"/>
+  <text x="92" y="252" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Fournisseur: ENGIE</text>
+  <text x="92" y="306" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Offre: Elec Référence 3 ans</text>
+  <text x="92" y="360" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Puissance: 6 kVA</text>
+  <rect x="62" y="430" width="676" height="498" rx="24" fill="#ffffff" stroke="#d4d4d8"/>
+  <text x="92" y="500" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Consommation annuelle estimée: 5 600 kWh</text>
+  <text x="92" y="560" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Prix du kWh base: 0,2039 €</text>
+  <text x="92" y="620" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Abonnement mensuel: 15,33 €</text>
+  <text x="92" y="680" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">PDL: 25573091842371</text>
+  <text x="92" y="740" font-family="Arial, sans-serif" font-size="28" fill="#0f172a">Référence contrat: ENG-FACT-9382</text>
+  <text x="92" y="860" font-family="Arial, sans-serif" font-size="28" fill="#475569">Période: 01/05/2025 → 01/04/2026</text>
+  <text x="92" y="1000" font-family="Arial, sans-serif" font-size="26" fill="#64748b">Exemple de document de démo WattSwitch</text>
+</svg>
+
