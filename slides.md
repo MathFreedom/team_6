@@ -239,13 +239,13 @@ Si le fournisseur exige un appel SAV pour finaliser : agent vocal en français q
 
 ---
 
-## Slide 14 — Roadmap, légal & risques
+## Slide 14 — Roadmap accéléré, légal & risques
 
-**Roadmap**
-- 🟢 **M1–3** : MVP électricité, mode validation manuelle, 1 fournisseur partenaire
-- 🟡 **M4–6** : mode 100 % auto, 5 partenariats, optimisation tarifaire (Tempo/HP-HC)
-- 🟠 **M7–12** : extension gaz, dashboard avancé, premier raise seed
-- 🔵 **An 2** : B2G — collectivités, lutte précarité énergétique
+**Roadmap (équipe 4 devs × Claude Code = vitesse 5-10×)**
+- 🟢 **J+7** : MVP v1 en prod, 1er fournisseur partenaire signé
+- 🟡 **J+30** : 5 partenariats, 500 utilisateurs bêta, mode 100 % auto opt-in
+- 🟠 **J+90** : 5 000 utilisateurs, optimisation tarifaire avancée (Tempo/HP-HC)
+- 🔵 **Q1 2027** : levée seed, extension gaz, B2G précarité énergétique
 
 **Cadre légal cadré**
 - ✅ **Pas d'ORIAS requis** pour intermédiation énergie pure
@@ -259,10 +259,10 @@ Si le fournisseur exige un appel SAV pour finaliser : agent vocal en français q
 
 **Aujourd'hui** : un MVP qui marche, 4 actions agentiques en live, sur un marché de **9 Md€** dormants.
 
-**Les 12 prochains mois** :
-- 5 partenariats fournisseurs d'élec d'ici juillet 2026
-- 1 000 utilisateurs bêta avant fin 2026
-- Levée seed Q1 2027 pour scaling marketing + extension gaz
+**Les 90 prochains jours** *(4 devs × Claude Code, vitesse 5-10×)* :
+- J+7 : 1er partenariat fournisseur signé + MVP en prod
+- J+30 : 500 utilisateurs bêta, 5 partenariats
+- J+90 : 5 000 utilisateurs, prep levée seed Q1 2027
 
 > **AutoSwitch transforme un comportement annuel pénible en un service silencieux qui rapporte de l'argent à vie.**
 

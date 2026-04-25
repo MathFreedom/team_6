@@ -1,96 +1,111 @@
 # AutoSwitch — Plan d'action
 
 **Périmètre : électricité résidentielle France.**
-**Horizon : J0 (hackathon) → J+90 (post-hackathon).**
+**Horizon : J0 (hackathon 24 h) → J+90 (prep seed).**
+**Setup équipe : 4 devs × Claude Code = vitesse 5-10× sur le code.**
 
 ---
 
 ## 1. Phase 0 — Pré-hackathon (J-3 à J0)
 
-### 1.1 Setup environnements
+### 1.1 Comptes API à provisionner
 
-- [ ] **Comptes API** créés et clés en variables d'env :
-  - Anthropic (Claude Sonnet 4.5)
-  - Mistral (OCR)
-  - Enedis Data Connect (sandbox développeur)
-  - Vapi.ai (compte trial + voix FR pré-config)
-  - Twilio (SMS test)
-  - Resend (email)
-  - Supabase (projet créé, schéma initial)
-- [ ] **Repo GitHub** prêt avec branches `main` / `dev` / `feat/*`
-- [ ] **Stack base** initialisée :
+- [ ] Anthropic (Claude Sonnet 4.5)
+- [ ] Mistral (OCR)
+- [ ] Enedis Data Connect (sandbox développeur — délai d'inscription : 24-48 h)
+- [ ] Vapi.ai (compte trial + 1 voix FR pré-config)
+- [ ] Twilio (SMS test pour notifications)
+- [ ] Resend (email transactionnel)
+- [ ] Supabase (projet + schéma initial)
+- [ ] DocuSign sandbox (mandat SEPA mocké)
+
+### 1.2 Repo & stack initialisée
+
+- [ ] GitHub repo prêt avec branches `main` / `dev` / `feat/onboarding` / `feat/watcher` / `feat/decider` / `feat/executor`
+- [ ] Stack base committée :
   - Next.js 15 + Tailwind + shadcn
-  - Mastra ou LangGraph pour orchestration
+  - Mastra (TypeScript-first, recommandé pour 4 devs Claude Code)
   - Drizzle ORM + Supabase Postgres
-- [ ] **Compte démo Linky** : un PDL réel (Tom ou autre) avec autorisation Data Connect activée
-- [ ] **Faux fournisseur cible** identifié (ex : Octopus Energy sandbox ou page test)
+  - Vercel / Railway pour déploiement live pendant la démo
+- [ ] **CLAUDE.md** racine du repo avec :
+  - Architecture du projet
+  - Conventions (TS strict, ESLint, Prettier)
+  - Stack & APIs disponibles
+  - Comment tester chaque agent en isolation
+- [ ] **Repos partagés Linear / Notion** pour issues
 
-### 1.2 Préparation jeux de données
+### 1.3 Jeux de données
 
-- [ ] 5 factures EDF réelles (anonymisées) pour entraîner l'OCR
-- [ ] Tableau Excel des 10 offres marché (cf. `data.md` § 2.3) avec prix kWh + abonnement → seed DB
-- [ ] Profil Linky démo : courbe de charge 30 min sur 30 jours
+- [ ] 5 factures EDF réelles (anonymisées) → train OCR
+- [ ] Tableau Excel des 10 offres marché (cf. `data.md` § 2.3) → seed DB
+- [ ] **PDL démo réel** avec autorisation Enedis Data Connect activée (Tom ou autre)
+- [ ] 30 jours de courbe de charge 30 min stockée localement (backup démo)
 
-### 1.3 Répartition rôles équipe
+### 1.4 Répartition par track
 
-| Rôle | Responsable | Stack principale |
+| Track | Owner | Stack principale |
 |---|---|---|
-| **Lead architecte / orchestrator** | — | Mastra/LangGraph + Claude |
-| **Onboarding agent + OCR** | — | Mistral OCR + Claude Vision |
-| **Watcher agent + scraping** | — | Playwright + Enedis Data Connect |
-| **Decider agent + logique** | — | Claude Sonnet 4.5 prompts |
-| **Executor agent + Vapi** | — | Browser-use + Vapi |
-| **Front + dashboard** | — | Next.js + shadcn |
-| **Pitch + démo + support** | Tom | Marp + Notion |
+| **T1 — Lead / Orchestrator** | TBD | Mastra + Claude Sonnet 4.5 + DB |
+| **T2 — Onboarding + OCR + Front** | TBD | Mistral OCR + Claude Vision + Next.js |
+| **T3 — Watcher + Enedis + Scraping** | TBD | Playwright + Enedis Data Connect |
+| **T4 — Executor + Browser-use + Vapi** | Tom *(le moment WOW)* | Browser-use + Vapi |
+
+> **Rule of thumb** : chaque track travaille sur sa branche, fait des PR petits et fréquents, Claude Code écrit le code, le dev valide.
 
 ---
 
-## 2. Phase 1 — Hackathon 48 h
+## 2. Phase 1 — Hackathon 24 h
 
-### Jour 1 (J0)
+### Heure par heure (24 tranches d'1 h)
 
-| Tranche | Objectif | Livrable | Owner |
-|---|---|---|---|
-| **0–3 h** | Setup global | Repo + Next.js + Supabase + Claude API en local | Lead |
-| **3–8 h** | Onboarding Agent | OCR factures EDF → JSON structuré (PDL, conso, abo, prix) | Onboarding |
-| **8–14 h** | Watcher Agent | Enedis Data Connect sandbox lit conso 30 min + scraping 2 fournisseurs | Watcher |
-| **14–20 h** | Decider Agent | Logique de comparaison + prompt système Claude + sortie en langage naturel | Decider |
-| **20–22 h** | Sync & démo interne | Pipeline Onboard → Watcher → Decider qui tourne sur un PDL réel | All |
+| H | T1 — Orchestrator | T2 — Onboarding | T3 — Watcher | T4 — Executor |
+|---:|---|---|---|---|
+| **0-1** | Setup repo, branches | Mistral OCR PoC sur 1 facture | Enedis sandbox auth OAuth | Browser-use installé + 1er test |
+| **1-2** | Schéma DB (users, contracts, switches) | Parsing JSON → schéma | Pull conso 30 min depuis sandbox | Souscription mockée Octopus en test |
+| **2-3** | API REST routes | UI upload facture | Scraping Kelwatt (1 fournisseur) | Mandat SEPA DocuSign mocké |
+| **3-4** | Auth Supabase basique | OCR sur 5 factures variées | Scraping Selectra (2e source) | Vapi voix FR — script "résiliation" |
+| **4-5** | Orchestrator skeleton | Connect bouton "Linky" → OAuth | Normalisation données offres | Vapi appel test sur numéro perso |
+| **5-6** | Decider Agent v1 (compare prix kWh) | Affichage facture parsée | Calcul facture annuelle simulée | Browser-use sur formulaire Octopus |
+| **6-7** | Decider explication LLM | Onboarding flow complet | Profile detection (HC/HP, weekend) | Intégration Browser-use → DB |
+| **7-8** | **Sync 1** : pipeline Onboard → Watcher → Decider qui tourne | | | |
+| **8-9** | Cooldown 90 j logique | Dashboard skeleton | Backup données local (si Enedis down) | Vapi conversationnel (questions/réponses) |
+| **9-10** | Validation user 1-clic | Dashboard : facture, économies | Tests sur 3 PDL différents | Browser-use end-to-end mock |
+| **10-11** | Notifications Resend | Historique switches | Cron quotidien (mock) | Démo Vapi enregistrée backup |
+| **11-12** | API webhooks fournisseurs | Mobile responsive | Optimisation latence | Polish Vapi français |
+| **12-13** | **Sync 2** : démo end-to-end qui tourne | | | |
+| **13-14** | Logs + monitoring | Animations / UX polish | Indicateurs santé | Backup vidéo 30 sec démo |
+| **14-15** | Auth utilisateur final | Tom (premier user simulé) | — | Démo répétée 1× |
+| **15-16** | Buffer / debug | Pitch deck — slides 1-7 | Pitch deck — données | Pitch deck — démo script |
+| **16-17** | Buffer / debug | Pitch deck — slides 8-15 | Q&A préparé | Démo répétée 2× |
+| **17-18** | **Sync 3** : démo + pitch finalisés | | | |
+| **18-19** | Répétition complète #1 (chrono) |
+| **19-20** | Debug post-répétition |
+| **20-21** | Répétition complète #2 |
+| **21-22** | Debug post-répétition |
+| **22-23** | Répétition complète #3 (clean run) |
+| **23-24** | **Buffer crash** + sommeil court |
 
-**Critère sortie J1** : sur upload de facture EDF, le système retourne *« passe à Primeo, économie estimée 232 €/an »* en moins de 30 secondes.
+**Critère sortie hackathon (H24)** : démo 90 s qui passe **3 fois de suite** sans intervention.
 
-### Jour 2 (J0+1)
-
-| Tranche | Objectif | Livrable | Owner |
-|---|---|---|---|
-| **0–6 h** | Executor Agent | Browser-use souscrit chez 1 fournisseur cible (mock) avec mandat SEPA | Executor |
-| **6–10 h** | Vapi voix FR | Agent vocal scripté qui appelle un faux SAV et finalise une résiliation | Executor |
-| **10–14 h** | Dashboard utilisateur | Front Marie : conso Linky, économies estimées, historique switches | Front |
-| **14–17 h** | Pitch deck final | `slides.md` → export PDF + version Marp HTML | Tom |
-| **17–20 h** | Répétitions démo | 3 répétitions chronométrées de la démo + Q&A sur slides | All |
-
-**Critère sortie J2** : démo de 90 secondes qui marche **3 fois de suite** sans intervention humaine.
-
-### Scope explicite : ce qui est IN / OUT pour le hackathon
+### 2.1 Scope IN / OUT
 
 **IN (must-have)**
-- ✅ OCR facture EDF → JSON
+- ✅ OCR facture EDF → JSON (PDL, conso, prix, abo, option tarifaire)
 - ✅ Connexion Linky démo via OAuth Enedis Data Connect
 - ✅ Scraping 2-3 fournisseurs (Primeo, Octopus, TotalEnergies)
-- ✅ Decider Agent qui décide + explique
+- ✅ Decider Agent qui décide + explique en français
 - ✅ Browser-use sur 1 souscription en live
-- ✅ Vapi appel vocal en français (le moment WOW)
+- ✅ **Vapi appel vocal FR (le moment WOW)**
 - ✅ Dashboard avec économies cumulées
-- ✅ Pitch deck 10-12 slides
+- ✅ Pitch deck 10-15 slides
 
-**OUT (nice-to-have, post-hack)**
-- ❌ Vraie intégration paiement / mandat SEPA réel (mocké via DocuSign sandbox)
-- ❌ Optimisation HP/HC / Tempo (mention dans le pitch, pas codé)
+**OUT (post-hack)**
+- ❌ Mandat SEPA réel (mocké DocuSign sandbox)
+- ❌ Optimisation HP/HC / Tempo (mention pitch, pas codé)
 - ❌ Multi-PDL / résidence secondaire
-- ❌ B2G / précarité énergétique
-- ❌ Gaz résidentiel
-- ❌ Mode 100 % auto sans validation utilisateur
-- ❌ Vraie auth utilisateurs (mock email magic link)
+- ❌ Mode 100 % auto sans validation
+- ❌ Auth utilisateurs prod (mock magic link)
+- ❌ Gaz / B2G
 
 ---
 
@@ -102,13 +117,13 @@
 |---|---|---|
 | 0-10 | Upload facture EDF (PDF) | *« Marie reçoit sa facture EDF. Elle la photographie. »* |
 | 10-15 | OCR live affiche PDL, conso, prix | *« 4 secondes. PDL extrait, conso 5 200 kWh. »* |
-| 15-25 | Connexion Linky OAuth | *« Elle connecte son Linky. Courbe 30 min. »* |
+| 15-25 | Connexion Linky OAuth | *« Elle connecte son Linky. Courbe 30 min affichée. »* |
 | 25-40 | Decider parle | *« L'agent décide : Primeo Confort+, économie 245 €/an. »* |
 | 40-50 | Clic « Switch » | *« Marie clique. Une seule fois. »* |
 | 50-75 | Browser-use souscrit en live | *« Browser-use remplit le formulaire à sa place. »* |
 | 75-90 | Vapi appelle, résilie en français | *« Et si l'opérateur exige un appel ? »* → audio Vapi live |
 
-### 3.2 Plan B si quelque chose casse
+### 3.2 Plan B (chaque composant a un fallback prêt)
 
 | Composant | Risque | Plan B |
 |---|---|---|
@@ -116,6 +131,7 @@
 | Vapi | API down / latence | Audio pré-enregistré + caption |
 | OCR | Facture mal lue | Facture pré-parsée en cache |
 | Linky OAuth | Sandbox Enedis instable | Données stockées localement |
+| Wifi venue | Coupure | Hotspot mobile + démo offline préparée |
 
 ### 3.3 Q&A pré-préparé (top 10 questions jury)
 
@@ -126,167 +142,167 @@
 3. **« Et si les fournisseurs vous bloquent ? »**
    → Vapi en fallback + diversification 5+ partenaires + roadmap API directes.
 4. **« Réglementation, ORIAS ? »**
-   → ORIAS pas requis pour intermédiation énergie (couvre assurance/banque). Mandat SEPA + procuration eIDAS suffit.
+   → ORIAS pas requis pour intermédiation énergie. Mandat SEPA + procuration eIDAS suffit.
 5. **« Comment vous acquérez vos clients ? »**
-   → Démarchage tél interdit (375 k€ amende). On joue 100 % digital : SEO, partenariats banques/néobanques, bouche-à-oreille.
+   → Démarchage tél interdit (375 k€ amende). 100 % digital : SEO, partenariats banques/néobanques, bouche-à-oreille.
 6. **« Pourquoi maintenant ? »**
-   → Spot ×6,4 en 7 jours, 47/80 offres < TRV, Linky 97 % installé, +556 k switchers en 2025. Tout converge.
+   → Spot ×6,4 en 7 jours, 47/80 offres < TRV, Linky 97 %, +556 k switchers en 2025.
 7. **« Modèle économique ? »**
-   → Commission fournisseur 80 € × 1,2 switch/an = 96 € ARPU + Premium 5 €/mois.
-8. **« Quel est le risque numéro 1 ? »**
+   → Commission 80 € × 1,2 switch/an = 96 € ARPU + Premium 5 €/mois.
+8. **« Risque numéro 1 ? »**
    → Anti-spam fournisseur. Mitigation : cooldown 90 j codé en dur.
-9. **« Pourquoi ça va marcher en France et pas ailleurs ? »**
-   → Switch gratuit + sans engagement + Linky 97 % = combinaison unique. UK a le même cadre, Octopus vaut 9 Md$.
+9. **« Pourquoi ça va marcher en France ? »**
+   → Switch gratuit + sans engagement + Linky 97 % = combinaison unique. UK : Octopus vaut 9 Md$.
 10. **« Et après l'électricité ? »**
     → Gaz résidentiel (10 M sites) → x2 TAM. Puis B2G précarité énergétique.
 
 ---
 
-## 4. Phase 3 — Post-hackathon J+30
+## 4. Phase 3 — Sprint J+1 à J+7 (post-hack)
 
-### 4.1 Décision GO / NO-GO (J+7)
+> **Hypothèse vitesse** : 4 devs × Claude Code = ce qui prendrait normalement 1 mois se fait en 1 semaine.
 
-Critères pour continuer le projet :
-- [ ] Le MVP a impressionné le jury (top 3 ou prix tech)
-- [ ] L'équipe est aligned pour continuer
-- [ ] 10 personnes interviewées disent *« je l'utiliserais »*
+### J+1 (lendemain hack)
+- [ ] **Debrief équipe** (1 h) : ce qui a marché, ce qui a planté, GO/NO-GO
+- [ ] Déploiement prod stabilisé sur Vercel/Railway
+- [ ] Annonce LinkedIn / X du projet (générer du buzz)
 
-### 4.2 Validation utilisateur (J+14)
+### J+2 à J+3
+- [ ] **10 interviews users** (15 min chacune, 5 jamais switché + 5 ayant switché)
+- [ ] Demande **passage sandbox → prod Enedis Data Connect** (délai officiel ~7 j)
+- [ ] **1er contact fournisseurs** : Primeo, Mint Énergie, OHM Énergie, Octopus (4 emails partenariat envoyés)
 
-- [ ] **20 interviews** semi-structurées (15 min chacune)
-  - 10 jamais switché du TRV
-  - 10 ayant déjà switché 1 fois
-- [ ] Questions clés :
-  - *« Tu paierais combien pour ça ? »*
-  - *« Tu donnerais accès à ton compte Linky ? »*
-  - *« Tu accepterais le mode 100 % auto ? »*
-- [ ] Synthèse → décisions produit (free vs premium, opt-in vs auto par défaut)
+### J+4 à J+7
+- [ ] **MVP v1 en prod** :
+  - Vraie auth Supabase
+  - Vraie connexion Enedis Data Connect prod
+  - Vrai DocuSign / Yousign eIDAS qualifié
+  - Browser-use stabilisé sur 2 fournisseurs (Primeo + Octopus)
+  - Cooldown 90 j en DB
+- [ ] **1er fournisseur partenaire en discussion contractuelle** (commission 60-80 €/lead)
+- [ ] **CGU/CGV draft** par avocat (1 séance 500 €)
+- [ ] **20 utilisateurs bêta privée** (réseau perso)
+- [ ] **Analytics Posthog** branchés
 
-### 4.3 Audit juridique (J+30)
-
-- [ ] **Avocat spécialisé énergie** (1-2 séances 500-1000 €)
-  - Validation mandat SEPA + procuration
-  - Vérification non-besoin ORIAS
-  - Cadrage CGU / CGV
-- [ ] **DPO / RGPD** : audit gestion donnée Linky 30 min
-- [ ] **Statut juridique** : SAS pré-bêta
-
----
-
-## 5. Phase 4 — MVP v1 (J+30 à J+60)
-
-### 5.1 Tech production
-
-- [ ] Migration sandbox Enedis → prod (demande officielle Enedis Data Connect)
-- [ ] Scraping → infrastructure dédiée (Crawlee / Apify)
-- [ ] Browser-use sur 3 fournisseurs réels (pas mockés)
-- [ ] Mandat SEPA + procuration via DocuSign / Yousign eIDAS qualifié
-- [ ] Monitoring : Sentry + Logtail + Grafana
-- [ ] Compliance : RGPD, hébergement HDS pas requis (pas santé) mais EU only
-
-### 5.2 Partenariats
-
-- [ ] **1er fournisseur partenaire signé** (cible : Primeo ou Mint Énergie — petits, agressifs, à la recherche de leads)
-- [ ] **Contrat de commission** : 60-80 €/lead acquis
-- [ ] Backup : 2 autres fournisseurs en discussion
-
-### 5.3 Bêta privée
-
-- [ ] **50 utilisateurs** recrutés (réseau perso + LinkedIn ciblé)
-- [ ] Mode validation manuelle uniquement (pas d'auto)
-- [ ] Suivi NPS hebdo
-- [ ] Critère succès : **20+ switches réussis** sur 50 utilisateurs
+**Critère sortie J+7** : 5 switches réels effectués, 0 litige, NPS bêta > 60.
 
 ---
 
-## 6. Phase 5 — MVP v2 + croissance (J+60 à J+90)
+## 5. Phase 4 — Sprint J+7 à J+30
 
-### 6.1 Produit
+### Tech (parallélisé sur 4 devs × Claude Code)
 
-- [ ] **Mode 100 % auto opt-in** activé (avec règles strictes)
-- [ ] **Optimisation HP/HC** : recommandation basée sur 30 jours Linky
+- [ ] **Mode 100 % auto opt-in** activé (avec validation initiale + règles strictes)
+- [ ] **Optimisation HP/HC** : moteur de recommandation basé sur 30 jours Linky
 - [ ] **Alertes Tempo** pour profils flexibles
 - [ ] **Multi-PDL** (résidence secondaire)
-- [ ] App mobile *(nice to have, dépend ressources)*
+- [ ] **3 fournisseurs intégrés** (vs 2 à J+7)
+- [ ] **App mobile PWA** (Next.js → installable)
+- [ ] **Monitoring** : Sentry + Logtail + dashboard Grafana
 
-### 6.2 Croissance
+### Business
 
-- [ ] **5 partenariats fournisseurs** signés
-- [ ] **500 utilisateurs bêta** actifs
-- [ ] Acquisition :
-  - SEO : 10 articles long-tail (« meilleure offre élec maison 100m2 », etc.)
-  - Partenariats : 1 banque/néobanque en pilote (Lydia, Revolut, Pixpay…)
-  - Reddit / Twitter : présence active
-- [ ] Premier ratio LTV/CAC mesuré
+- [ ] **5 partenariats fournisseurs signés**
+- [ ] **500 utilisateurs bêta actifs**
+- [ ] **Audit juridique complet** (avocat énergie, 2-3 séances)
+- [ ] **SAS créée** (statut juridique cible)
+- [ ] **DPO RGPD** identifié (gestion donnée Linky 30 min)
 
-### 6.3 Préparation seed
+### Acquisition (démarchage tél interdit, 100 % digital)
 
+- [ ] **SEO** : 5 articles long-tail (« meilleure offre élec maison 100m2 », etc.)
+- [ ] **Reddit / Twitter** : présence active, posts hebdo
+- [ ] **1 partenariat néobanque en pilote** (Lydia, Revolut, Pixpay…)
+- [ ] **Premier ratio LTV/CAC** mesuré
+
+**Critère sortie J+30** : 500 utilisateurs, 200 switches finalisés, 30 000 € d'économie cumulée délivrée.
+
+---
+
+## 6. Phase 5 — Sprint J+30 à J+90 (préparation seed)
+
+### Produit
+- [ ] **Mode 100 % auto par défaut** (pour utilisateurs qui ont validé 1 switch manuel sans problème)
+- [ ] **Multi-PDL illimité**
+- [ ] **Bilan annuel automatique** (récap économies + projections)
+- [ ] **Programme de parrainage** (croissance organique virale)
+
+### Business
+- [ ] **5 000 utilisateurs**
+- [ ] **8-10 fournisseurs partenaires**
+- [ ] **Premiers 100 utilisateurs Premium 5 €/mois** payants
+- [ ] **Extension gaz** en branche feature (lancement J+90)
+
+### Levée seed
 - [ ] **Pitch deck investor v1** (différent du pitch hackathon, plus business)
-- [ ] **Data room** : KPIs, contrats partenaires, audit juridique
-- [ ] **3 angels en pré-discussion**
-- [ ] Cible levée Q1 2027 : 500 k€ – 1 M€ pre-seed
+- [ ] **Data room** : KPIs, contrats partenaires, audit juridique, NPS, churn
+- [ ] **5 angels en pré-discussion** (Octopus FR, ex-Selectra, ex-Hello Watt, ex-Doctolib, climate VCs)
+- [ ] **3 fonds VC en discussion** (Daphni, Frst, Heartcore, Speedinvest)
+- [ ] **Cible levée Q1 2027 : 800 k€ – 1,5 M€ pre-seed** (valuation 5-8 M€)
+
+**Critère sortie J+90** : term sheet en mains.
 
 ---
 
 ## 7. KPIs à tracker dès J0
 
-| Métrique | Fréquence | Cible J+90 |
-|---|---|---|
-| **Utilisateurs onboardés** | Hebdo | 500 |
-| **Switches initiés** | Hebdo | 200 |
-| **Switches finalisés** | Hebdo | 150 (75 % conversion) |
-| **Économie cumulée délivrée** | Hebdo | 30 000 € |
-| **NPS** | Mensuel | > 50 |
-| **CAC** | Mensuel | < 25 € |
-| **Taux d'opt-in mode auto** | Mensuel | > 40 % |
-| **Litiges Médiateur / 100 switches** | Mensuel | 0 |
+| Métrique | Fréquence | Cible J+30 | Cible J+90 |
+|---|---|---:|---:|
+| **Utilisateurs onboardés** | Quotidien | 500 | 5 000 |
+| **Switches initiés** | Quotidien | 200 | 2 000 |
+| **Switches finalisés** | Quotidien | 150 (75 %) | 1 600 (80 %) |
+| **Économie cumulée délivrée** | Hebdo | 30 k€ | 350 k€ |
+| **NPS** | Mensuel | > 50 | > 60 |
+| **CAC** | Mensuel | < 25 € | < 15 € |
+| **% Premium payant** | Mensuel | 0 | 2 % |
+| **Taux opt-in mode auto** | Mensuel | > 30 % | > 50 % |
+| **Litiges Médiateur / 100 switches** | Mensuel | 0 | 0 |
 
 ---
 
 ## 8. Décisions critiques à prendre
 
-### 8.1 Avant le hackathon
+### Avant le hackathon
+- [ ] **Mastra vs LangGraph** : Mastra recommandé (TypeScript-first, plus rapide à prototyper avec Claude Code)
+- [ ] **Vapi vs Retell AI** : tester les 2 sur cas d'usage français avant H0
+- [ ] **Browser-use vs Playwright pur** : Browser-use plus moderne mais moins prévisible — recommandé pour démo, fallback Playwright pour prod
 
-- [ ] **Choix du framework agents** : Mastra (TypeScript-first, plus simple) vs LangGraph (Python, plus mature) ?
-- [ ] **Voix Vapi vs Retell AI** : tester les deux sur 1 cas d'usage en français
-- [ ] **Browser-use vs Playwright pur** : Browser-use plus moderne mais moins prévisible
+### J+1 à J+7
+- [ ] **Mode auto par défaut ou opt-in ?** Recommandation : opt-in après 1er switch manuel validé
+- [ ] **Free tier inclut combien de switches ?** Recommandation : 1/an (cohérent fréquence naturelle)
+- [ ] **Premium 5 € ou 7,99 € ?** A/B test sur les 100 premiers Premium
 
-### 8.2 Avant la bêta (J+30)
-
-- [ ] **Mode auto par défaut ou opt-in ?** Insight UX : la confiance se construit avec validation manuelle d'abord
-- [ ] **Free tier inclut combien de switches ?** Recommandation : 1/an
-- [ ] **Premium 5 € ou 7,99 € ?** A/B test possible
-- [ ] **Présence de marque sur le marché du switch** : créer une marque distincte ou rester full white-label vers les fournisseurs ?
-
-### 8.3 Avant le seed (J+90)
-
-- [ ] **Extension gaz : maintenant ou après seed ?** Recommandation : après seed, pour garder le focus
-- [ ] **Statut juridique cible : SAS ou SCOP ?** SAS classique pour scaling
-- [ ] **B2G : pivoter ou roadmap an 2 ?** Recommandation : roadmap an 2
+### J+30 à J+90
+- [ ] **Extension gaz : maintenant ou après seed ?** Recommandation : J+90 pour la pitch story, lancement post-seed
+- [ ] **Marque distincte ou white-label ?** Recommandation : marque distincte (récurrence + branding)
+- [ ] **B2G : roadmap an 2 ou priorité ?** Recommandation : roadmap, priorité = scaling B2C
 
 ---
 
-## 9. Risques majeurs & mitigation continue
+## 9. Risques majeurs & mitigation
 
 | Risque | Indicateur d'alerte | Mitigation |
 |---|---|---|
-| **Anti-spam fournisseur** | Refus de souscription d'un partenaire | Cooldown 90 j + diversification |
-| **Faillite d'un fournisseur partenaire** | Carton rouge Médiateur | Monitoring santé + 5+ partenaires |
-| **Régulation tarifaire qui durcit le marché** | Annonce CRE / gouvernement | Veille mensuelle + adaptation produit |
-| **Blocage technique scraping** | Échec > 10 % sur un fournisseur | Vapi fallback + API directe |
-| **Litige client / Médiateur** | 1 saisine | RC pro + procédure de remédiation |
-| **Concurrence étrangère arrive** (Octopus/Bilt FR) | Annonce presse | Speed to market + lock partenariats |
+| **Anti-spam fournisseur** | Refus de souscription d'un partenaire | Cooldown 90 j + 5+ partenaires diversifiés |
+| **Faillite fournisseur partenaire** | Carton rouge Médiateur / news | Monitoring santé + filtrage automatique |
+| **Régulation tarifaire qui durcit** | Annonce CRE / gouvernement | Veille mensuelle + adaptation produit |
+| **Blocage scraping** | Échec > 10 % sur un fournisseur | Vapi fallback + roadmap API directes |
+| **Litige client / Médiateur** | 1 saisine | RC pro + procédure remédiation |
+| **Concurrence étrangère arrive** (Octopus FR / Bilt FR) | Annonce presse | Speed to market + lock partenariats exclusifs |
+| **Enedis Data Connect API change** | Email Enedis | Fallback OCR factures + scraping espace client |
+| **Linky non installé** (3 % foyers) | UI utilisateur | Onboarding alternatif (saisie manuelle) |
 
 ---
 
-## 10. Ressources / liens utiles
+## 10. Ressources
 
 - **Repo GitHub** : https://github.com/MathFreedom/team_6
 - **Pitch deck** : `slides.md`
 - **Note de cadrage** : `text.md`
 - **Recherche marché** : `data.md`
-- **Enedis Data Connect Sandbox** : https://datahub-enedis.fr/data-connect/
-- **Mastra docs** : https://mastra.ai
+- **Enedis Data Connect** : https://datahub-enedis.fr/data-connect/
+- **Mastra** : https://mastra.ai
 - **Browser-use** : https://github.com/browser-use/browser-use
 - **Vapi.ai** : https://vapi.ai/
 - **DocuSign API eIDAS** : https://developers.docusign.com
+- **Yousign (FR)** : https://yousign.com/fr-fr/developers

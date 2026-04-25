@@ -88,7 +88,7 @@ Différenciateur fort : on ne se contente pas de comparer le prix kWh facial. L'
 
 ---
 
-## 4. Stack technique — 48 h de hack
+## 4. Stack technique — hackathon 24 h
 
 | Couche | Outil | Pourquoi |
 |---|---|---|
@@ -127,19 +127,21 @@ Différenciateur fort : on ne se contente pas de comparer le prix kWh facial. L'
 
 ---
 
-## 7. Plan 48 h de hack (résumé — détail dans `action_plan.md`)
+## 7. Plan 24 h de hack (résumé — détail dans `action_plan.md`)
 
-**Jour 1**
-- `0–3 h` : setup Next.js + Supabase + Claude API
-- `3–8 h` : Onboarding Agent (OCR factures + parsing) → DB
-- `8–14 h` : Watcher Agent (Enedis Data Connect sandbox + scraping 2-3 fournisseurs)
-- `14–20 h` : Decider Agent (logique de comparaison + LLM)
+**Setup équipe : 4 devs × Claude Code = parallélisation totale.**
 
-**Jour 2**
-- `0–6 h` : Executor Agent — Browser-use sur 1 fournisseur cible
-- `6–10 h` : Vapi agent vocal (le moment WOW)
-- `10–14 h` : dashboard utilisateur (économies cumulées, historique des switches)
-- `14–20 h` : pitch deck final + démo + répétitions
+| Tranche | Track 1 (Lead) | Track 2 (Onboarding) | Track 3 (Watcher) | Track 4 (Executor) |
+|---|---|---|---|---|
+| 0-2h | Setup repo + stack | OCR Mistral PoC | Enedis sandbox | Browser-use PoC |
+| 2-6h | Orchestrator + DB | Parsing facture EDF | Scraping 3 fournis. | Souscription mock |
+| 6-10h | Decider Agent prompts | Connect Linky OAuth | Calcul facture/profil | Vapi voix FR |
+| 10-14h | Intégration end-to-end | Dashboard front | Tests sur PDL réel | Démo scénario |
+| 14-18h | Polish + UX | — | — | Backup vidéo |
+| 18-22h | Pitch deck + slides | Répétitions démo | Q&A préparé | — |
+| 22-24h | Répétitions chronométrées + buffer crash |
+
+**Cible J+1 8h** : démo de 90 secondes qui marche **3 fois de suite**.
 
 ---
 
