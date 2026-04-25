@@ -42,16 +42,16 @@ export default function SuccessPage() {
               <CheckCircle2 className="size-8" />
             </div>
             <div>
-              <h1 className="font-[var(--font-display)] text-3xl font-semibold">Workflow validé</h1>
+              <h1 className="font-[var(--font-display)] text-3xl font-semibold">Workflow confirmed</h1>
               <p className="mt-1 text-sm text-muted-foreground">
-                Confirmation enregistrée{" "}
-                {switchState.confirmedAt ? formatDateTime(switchState.confirmedAt) : "maintenant"}.
+                Confirmation recorded{" "}
+                {switchState.confirmedAt ? formatDateTime(switchState.confirmedAt) : "now"}.
               </p>
             </div>
           </div>
 
           <div className="rounded-[24px] border border-primary/25 bg-primary/7 p-5">
-            <div className="text-sm text-muted-foreground">Économie annuelle estimée</div>
+            <div className="text-sm text-muted-foreground">Estimated annual savings</div>
             <div className="mt-1 font-[var(--font-display)] text-4xl font-semibold">
               {formatCurrency(switchState.estimatedAnnualSavingsEur)}
             </div>
@@ -59,7 +59,7 @@ export default function SuccessPage() {
 
           <Card className="bg-white/55">
             <CardHeader>
-              <CardTitle>Suite simulée</CardTitle>
+              <CardTitle>Simulated next steps</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {switchState.simulatedTimeline.map((item) => (
@@ -81,7 +81,7 @@ export default function SuccessPage() {
               router.push("/");
             }}
           >
-            Relancer une mission
+            Start a new mission
           </Button>
         </CardContent>
       </Card>

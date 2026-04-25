@@ -1,10 +1,10 @@
 import { Progress } from "@/components/ui/progress";
 
 const STEPS = [
-  { path: "/", label: "Accueil" },
-  { path: "/connect", label: "Connexion" },
-  { path: "/preferences", label: "Règles" },
-  { path: "/results", label: "Résultat" },
+  { path: "/", label: "Home" },
+  { path: "/connect", label: "Connect" },
+  { path: "/preferences", label: "Rules" },
+  { path: "/results", label: "Result" },
   { path: "/switch", label: "Switch" },
 ];
 
@@ -28,7 +28,7 @@ export function ProgressStepper({ currentPath }: { currentPath: string }) {
       <div className="flex items-center justify-between gap-3">
         <div>
           <div className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Workflow</div>
-          <div className="font-medium">Étape {currentIndex + 1} · {currentStep.label}</div>
+          <div className="font-medium">Step {currentIndex + 1} · {currentStep.label}</div>
         </div>
         <div className="text-sm text-muted-foreground">
           {currentIndex + 1}/{STEPS.length}

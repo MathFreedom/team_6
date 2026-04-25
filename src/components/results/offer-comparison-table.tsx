@@ -12,7 +12,7 @@ export function OfferComparisonTable({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Top offres comparées</CardTitle>
+        <CardTitle>Top offers compared</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
         {rankedOffers.slice(0, 4).map((ranked, index) => {

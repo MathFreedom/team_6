@@ -20,21 +20,20 @@ export function QrCta() {
       <DialogTrigger asChild>
         <Button size="lg" variant="outline" className="w-full justify-center sm:w-auto">
           <QrCode className="size-4" />
-          Scanner avec mon mobile
+          Scan with my phone
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-md">
         <div className="flex flex-col items-center gap-5 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
             <Smartphone className="size-3.5" />
-            Démo mobile
+            Mobile demo
           </div>
           <h2 className="font-[var(--font-display)] text-2xl font-semibold">
-            Scannez pour démarrer le parcours
+            Scan to start the journey
           </h2>
           <p className="text-sm text-muted-foreground">
-            Pointez l&apos;appareil photo de votre téléphone sur le QR code. Le tunnel Nova s&apos;ouvre directement
-            dans votre navigateur mobile.
+            Point your phone&apos;s camera at the QR code. The Nova funnel opens directly in your mobile browser.
           </p>
           <div className="rounded-3xl border border-border bg-white p-5 shadow-inner">
             {url ? (
@@ -47,7 +46,7 @@ export function QrCta() {
             <p className="break-all text-xs text-muted-foreground">{url}</p>
           ) : null}
           <p className="text-xs text-muted-foreground">
-            Astuce : votre téléphone doit être sur le même réseau Wi-Fi que cet ordinateur.
+            Tip: your phone must be on the same Wi-Fi network as this computer.
           </p>
         </div>
       </DialogContent>

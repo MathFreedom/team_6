@@ -9,8 +9,8 @@ export function UploadZone({
   disabled,
   fileName,
   inputRef,
-  title = "Importer ma facture",
-  description = "PDF, photo ou capture mobile. Claude lit le document puis structure le contrat.",
+  title = "Import my bill",
+  description = "PDF, photo or mobile screenshot. Claude reads the document then structures the contract.",
 }: {
   onFileSelected: (file: File) => void;
   disabled?: boolean;

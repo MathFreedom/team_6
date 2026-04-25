@@ -18,7 +18,7 @@ export function AppHeader() {
       <div className="glass flex items-center justify-between gap-3 rounded-[28px] border border-border/80 px-3 py-3 shadow-sm sm:px-4">
         <div className="flex items-center gap-3">
           {!isHome ? (
-            <Button variant="ghost" size="icon" onClick={() => router.back()} aria-label="Retour">
+            <Button variant="ghost" size="icon" onClick={() => router.back()} aria-label="Back">
               <ChevronLeft className="size-5" />
             </Button>
           ) : null}
@@ -28,19 +28,19 @@ export function AppHeader() {
             </div>
             <div>
               <div className="font-[var(--font-display)] text-lg font-semibold">Nova</div>
-              <div className="text-xs text-muted-foreground">Agent IA mobile · énergie</div>
+              <div className="text-xs text-muted-foreground">Mobile AI agent · energy</div>
             </div>
           </Link>
         </div>
 
         <div className="flex items-center gap-2">
           <Badge variant="accent" className="hidden sm:inline-flex">
-            Beta · Électricité
+            Beta · Electricity
           </Badge>
           {isHome ? (
             <Link href="/connect">
               <Button size="sm" variant="accent">
-                Commencer
+                Get started
               </Button>
             </Link>
           ) : (
@@ -53,7 +53,7 @@ export function AppHeader() {
               }}
             >
               <RotateCcw className="size-4" />
-              <span className="hidden sm:inline">Recommencer</span>
+              <span className="hidden sm:inline">Restart</span>
             </Button>
           )}
         </div>

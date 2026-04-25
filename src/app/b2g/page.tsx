@@ -7,26 +7,26 @@ import { Badge } from "@/components/ui/badge";
 const pillars = [
   {
     icon: HandHeart,
-    title: "Lutte contre la précarité énergétique",
-    text: "12 % des ménages FR sont en précarité énergétique. Nova outille les CCAS pour identifier les contrats sur-payés et déclencher un switch en quelques minutes.",
+    title: "Tackling energy poverty",
+    text: "12% of FR households are in energy poverty. Nova equips local social services to identify overpaid contracts and trigger a switch in minutes.",
   },
   {
     icon: Users,
-    title: "Travailleurs sociaux augmentés",
-    text: "Pas un nouvel outil à apprendre — un assistant qui pré-mâche le diagnostic. Le travailleur social garde la décision et le lien humain avec le bénéficiaire.",
+    title: "Augmented social workers",
+    text: "Not yet another tool to learn — an assistant that pre-chews the diagnosis. The social worker keeps the decision and the human link with the beneficiary.",
   },
   {
     icon: Shield,
-    title: "Conformité par défaut",
-    text: "Mandat explicite signé par le bénéficiaire, hébergement FR, RGPD, données jamais revendues. Audit trail complet pour la collectivité.",
+    title: "Compliance by default",
+    text: "Explicit mandate signed by the beneficiary, FR hosting, GDPR, data never resold. Full audit trail for the local authority.",
   },
 ];
 
 const pilotSteps = [
-  { n: "01", title: "Cadrage 2 semaines", text: "Identification de la cohorte (ex. 200 foyers RSA), définition des KPI, mandats juridiques." },
-  { n: "02", title: "Onboarding accompagné", text: "Sessions en CCAS ou à domicile. L'agent extrait le contrat actuel et calcule l'économie potentielle." },
-  { n: "03", title: "Déclenchement des switchs", text: "Mode Assistant : le travailleur social valide chaque switch avec le bénéficiaire. Aucune action sans consentement." },
-  { n: "04", title: "Bilan trimestriel", text: "Reporting consolidé : économies sécurisées, foyers sortis de précarité énergétique, recommandations." },
+  { n: "01", title: "2-week scoping", text: "Identify the cohort (e.g. 200 RSA households), define KPIs, legal mandates." },
+  { n: "02", title: "Guided onboarding", text: "Sessions at the social services office or at home. The agent extracts the current contract and computes potential savings." },
+  { n: "03", title: "Triggering switches", text: "Assistant mode: the social worker confirms each switch with the beneficiary. No action without consent." },
+  { n: "04", title: "Quarterly review", text: "Consolidated reporting: secured savings, households out of energy poverty, recommendations." },
 ];
 
 export default function B2GPage() {
@@ -37,44 +37,44 @@ export default function B2GPage() {
           <div className="space-y-4">
             <Badge variant="accent" className="w-fit flex items-center gap-1">
               <Building2 className="size-3" />
-              Nova pour les collectivités
+              Nova for local authorities
             </Badge>
             <h1 className="font-[var(--font-display)] text-4xl font-semibold leading-tight sm:text-5xl">
-              Sortez vos administrés de la précarité énergétique — sans recruter.
+              Lift your residents out of energy poverty — without hiring.
             </h1>
             <p className="max-w-2xl text-muted-foreground">
-              Le même agent IA, déployé pour vos CCAS, services sociaux et bailleurs sociaux. Nova détecte automatiquement les foyers qui sur-payent leur électricité et déclenche le switch avec un travailleur social dans la boucle.
+              The same AI agent, deployed for your social services and social housing operators. Nova automatically detects households overpaying for electricity and triggers the switch with a social worker in the loop.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="mailto:contact@nova.fr?subject=Pilote%20B2G">
                 <Button size="lg" variant="accent">
-                  Lancer un pilote
+                  Launch a pilot
                   <ArrowRight className="size-4" />
                 </Button>
               </Link>
               <Link href="/agent">
                 <Button size="lg" variant="outline">
-                  Voir le produit
+                  See the product
                 </Button>
               </Link>
             </div>
           </div>
           <div className="rounded-[24px] border border-primary/40 bg-white/80 p-6">
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Pilote type</div>
-            <div className="mt-2 font-[var(--font-display)] text-3xl font-semibold">200 foyers</div>
-            <p className="mt-1 text-sm text-muted-foreground">cohorte RSA / minima sociaux</p>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Typical pilot</div>
+            <div className="mt-2 font-[var(--font-display)] text-3xl font-semibold">200 households</div>
+            <p className="mt-1 text-sm text-muted-foreground">RSA / social-minimum cohort</p>
             <div className="mt-4 space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Économie moyenne / foyer</span>
-                <span className="font-semibold">~280 €/an</span>
+                <span className="text-muted-foreground">Average savings / household</span>
+                <span className="font-semibold">~€280/year</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Pouvoir d'achat redonné</span>
-                <span className="font-semibold">~56 000 €/an</span>
+                <span className="text-muted-foreground">Purchasing power restored</span>
+                <span className="font-semibold">~€56,000/year</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Coût pour la collectivité</span>
-                <span className="font-semibold text-primary">0 €</span>
+                <span className="text-muted-foreground">Cost to the authority</span>
+                <span className="font-semibold text-primary">€0</span>
               </div>
             </div>
           </div>
@@ -95,8 +95,8 @@ export default function B2GPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="font-[var(--font-display)] text-2xl">Comment se déroule un pilote</CardTitle>
-          <p className="text-sm text-muted-foreground">12 semaines pour mesurer l'impact réel sur votre territoire.</p>
+          <CardTitle className="font-[var(--font-display)] text-2xl">How a pilot runs</CardTitle>
+          <p className="text-sm text-muted-foreground">12 weeks to measure the real impact on your territory.</p>
         </CardHeader>
         <CardContent className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {pilotSteps.map((step) => (
@@ -114,15 +114,15 @@ export default function B2GPage() {
           <div className="space-y-2">
             <FileCheck2 className="size-6 text-primary" />
             <div className="font-[var(--font-display)] text-xl font-semibold">
-              Pilotes ouverts pour les CCAS et bailleurs sociaux FR
+              Pilots open for FR social services and social housing operators
             </div>
             <p className="max-w-xl text-sm text-muted-foreground">
-              Nous prenons 3 nouveaux territoires par trimestre pour assurer un accompagnement qualitatif. Subvention possible via Action Logement / certificats CEE.
+              We onboard 3 new territories per quarter to ensure quality support. Funding possible via Action Logement / CEE certificates.
             </p>
           </div>
           <Link href="mailto:contact@nova.fr?subject=Pilote%20B2G">
             <Button size="lg" variant="accent">
-              Demander un cadrage
+              Request a scoping
             </Button>
           </Link>
         </CardContent>

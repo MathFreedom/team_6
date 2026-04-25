@@ -13,38 +13,38 @@ const verticals: {
 }[] = [
   {
     icon: Bolt,
-    name: "Électricité",
+    name: "Electricity",
     status: "live",
-    eta: "Disponible",
-    hook: "Le premier workflow complet, du signal au switch.",
+    eta: "Available",
+    hook: "The first complete workflow, from signal to switch.",
   },
   {
     icon: Flame,
-    name: "Gaz",
+    name: "Gas",
     status: "next",
-    eta: "T3 2026",
-    hook: "Même logique d'agent, même interface mobile courte.",
+    eta: "Q3 2026",
+    hook: "Same agent logic, same short mobile interface.",
   },
   {
     icon: Smartphone,
     name: "Mobile & Internet",
     status: "soon",
-    eta: "T4 2026",
-    hook: "Détection des forfaits surdimensionnés et des options inutiles.",
+    eta: "Q4 2026",
+    hook: "Detect oversized plans and useless add-ons.",
   },
   {
     icon: Shield,
-    name: "Assurances",
+    name: "Insurance",
     status: "later",
     eta: "2027",
-    hook: "Arbitrage annuel assisté avec règles de confiance.",
+    hook: "Assisted yearly arbitration with trust rules.",
   },
   {
     icon: Repeat,
-    name: "Abonnements",
+    name: "Subscriptions",
     status: "later",
     eta: "2027",
-    hook: "Le même cockpit pour toutes les charges récurrentes.",
+    hook: "The same cockpit for every recurring charge.",
   },
 ];
 
@@ -61,19 +61,19 @@ export function VerticalsRoadmap() {
       <Card className="border-primary/20 bg-[linear-gradient(180deg,rgba(47,106,73,0.96),rgba(24,48,31,0.94))] text-primary-foreground shadow-[0_20px_60px_rgba(16,32,24,0.16)]">
         <CardHeader className="space-y-3">
           <Badge variant="outline" className="w-fit border-white/20 bg-white/12 text-white">
-            Vision produit
+            Product vision
           </Badge>
-          <CardTitle className="text-2xl sm:text-3xl text-white">Un agent dans la poche, pas un comparateur de plus</CardTitle>
+          <CardTitle className="text-2xl sm:text-3xl text-white">An agent in your pocket, not yet another comparator</CardTitle>
           <p className="text-sm text-white/95">
-            Le design du produit privilégie la vitesse sur téléphone: gros CTA, écrans courts, hiérarchie simple, et
-            chaque étape rapproche de l&apos;action au lieu d&apos;ajouter de la friction.
+            The product design favors speed on mobile: big CTAs, short screens, simple hierarchy, and every step
+            moves you closer to action instead of adding friction.
           </p>
         </CardHeader>
         <CardContent className="space-y-3">
           {[
-            "Home desktop ou mobile pour découvrir la promesse",
-            "Tunnel app centré sur un viewport téléphone",
-            "Workflow guidé jusqu'au résultat puis au switch",
+            "Desktop or mobile home to discover the promise",
+            "App funnel centered on a phone viewport",
+            "Guided workflow from result to switch",
           ].map((item) => (
             <div
               key={item}
@@ -88,9 +88,9 @@ export function VerticalsRoadmap() {
       <Card className="border-primary/10">
         <CardHeader className="space-y-3">
           <Badge variant="outline" className="w-fit">
-            Roadmap verticale
+            Vertical roadmap
           </Badge>
-          <CardTitle className="text-2xl sm:text-3xl">La structure est déjà prête pour d&apos;autres workflows</CardTitle>
+          <CardTitle className="text-2xl sm:text-3xl">The structure is already ready for other workflows</CardTitle>
         </CardHeader>
         <CardContent className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           {verticals.map((vertical) => {

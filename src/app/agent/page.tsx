@@ -12,39 +12,39 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { formatCurrency } from "@/lib/utils/currency";
 
 const monitoredVerticals = [
-  { icon: Bolt, name: "Électricité", status: "active" as const, hint: "Re-scoring mensuel actif" },
-  { icon: Flame, name: "Gaz", status: "waitlist" as const, hint: "Disponible T3 2026" },
-  { icon: Smartphone, name: "Mobile & Internet", status: "waitlist" as const, hint: "Disponible T4 2026" },
-  { icon: Shield, name: "Assurances", status: "waitlist" as const, hint: "Disponible 2027" },
+  { icon: Bolt, name: "Electricity", status: "active" as const, hint: "Monthly re-scoring active" },
+  { icon: Flame, name: "Gas", status: "waitlist" as const, hint: "Available Q3 2026" },
+  { icon: Smartphone, name: "Mobile & Internet", status: "waitlist" as const, hint: "Available Q4 2026" },
+  { icon: Shield, name: "Insurance", status: "waitlist" as const, hint: "Available 2027" },
 ];
 
 const activityFeed = [
   {
     icon: Radar,
-    when: "Il y a 2 h",
-    title: "Scan complet du marché électricité",
-    detail: "23 offres comparées à votre profil. Aucun changement dépassant le seuil de 80 €/an.",
+    when: "2 h ago",
+    title: "Full electricity market scan",
+    detail: "23 offers compared to your profile. No change exceeding the €80/year threshold.",
     tone: "neutral" as const,
   },
   {
     icon: TrendingUp,
-    when: "Il y a 4 jours",
-    title: "Nouvelle offre détectée — Mint Énergie Online",
-    detail: "Économie estimée : 142 €/an. En dessous de votre seuil Premium (Autopilot ≥ 200 €).",
+    when: "4 days ago",
+    title: "New offer detected — Mint Énergie Online",
+    detail: "Estimated savings: €142/year. Below your Premium threshold (Autopilot ≥ €200).",
     tone: "info" as const,
   },
   {
     icon: AlertTriangle,
-    when: "Il y a 9 jours",
-    title: "Anomalie de consommation",
-    detail: "+18 % vs même période l'an dernier. Probable usage chauffage. Aucune action requise.",
+    when: "9 days ago",
+    title: "Consumption anomaly",
+    detail: "+18% vs same period last year. Likely heating use. No action required.",
     tone: "warn" as const,
   },
   {
     icon: CheckCircle2,
-    when: "Il y a 14 jours",
-    title: "Switch Engie → Octopus Energy validé",
-    detail: "Économies sécurisées : 312 €/an. Mise en service prévue sous 21 jours.",
+    when: "14 days ago",
+    title: "Switch Engie → Octopus Energy confirmed",
+    detail: "Secured savings: €312/year. Service start expected within 21 days.",
     tone: "success" as const,
   },
 ];
@@ -68,27 +68,27 @@ export default function AgentDashboardPage() {
   const annualSavings = comparison?.annualSavingsEur ?? 0;
   const nextScan = new Date();
   nextScan.setDate(nextScan.getDate() + 30);
-  const formatted = nextScan.toLocaleDateString("fr-FR", { day: "numeric", month: "long" });
+  const formatted = nextScan.toLocaleDateString("en-GB", { day: "numeric", month: "long" });
 
   return (
     <div className="space-y-6">
       <Card className="overflow-hidden border-primary/30 bg-primary/5">
         <CardContent className="flex flex-col gap-6 p-7 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-3">
-            <Badge variant="accent" className="w-fit">Tableau de bord agent</Badge>
+            <Badge variant="accent" className="w-fit">Agent dashboard</Badge>
             <h1 className="font-[var(--font-display)] text-3xl font-semibold sm:text-4xl">
-              Votre agent veille — 24h/24, 7j/7.
+              Your agent is watching — 24/7.
             </h1>
             <p className="max-w-2xl text-sm text-muted-foreground">
-              Une vue unique sur tout ce que Nova surveille pour vous. Économies sécurisées, anomalies détectées, prochaines décisions.
+              A single view of everything Nova monitors for you. Secured savings, detected anomalies, upcoming decisions.
             </p>
           </div>
           <div className="rounded-[24px] border border-primary/40 bg-white/80 p-5 text-center">
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Économies annuelles sécurisées</div>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Annual secured savings</div>
             <div className="mt-2 font-[var(--font-display)] text-4xl font-semibold text-primary">
               {formatCurrency(annualSavings || 312)}
             </div>
-            <p className="mt-1 text-xs text-muted-foreground">+ ~140 €/an potentiels en attente</p>
+            <p className="mt-1 text-xs text-muted-foreground">+ ~€140/year potential pending</p>
           </div>
         </CardContent>
       </Card>
@@ -96,9 +96,9 @@ export default function AgentDashboardPage() {
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <Card>
           <CardHeader className="flex flex-col gap-2">
-            <CardTitle className="font-[var(--font-display)] text-xl">Activité récente</CardTitle>
+            <CardTitle className="font-[var(--font-display)] text-xl">Recent activity</CardTitle>
             <p className="text-sm text-muted-foreground">
-              Tout ce que l'agent a fait pour vous, en clair. Vous restez informé sans avoir à demander.
+              Everything the agent did for you, in plain language. You stay informed without having to ask.
             </p>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -122,7 +122,7 @@ export default function AgentDashboardPage() {
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle className="font-[var(--font-display)] text-xl">Verticales surveillées</CardTitle>
+              <CardTitle className="font-[var(--font-display)] text-xl">Monitored verticals</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {monitoredVerticals.map((v) => (
@@ -137,7 +137,7 @@ export default function AgentDashboardPage() {
                     </div>
                   </div>
                   <Badge variant={v.status === "active" ? "accent" : "outline"} className="text-[10px]">
-                    {v.status === "active" ? "Actif" : "Liste d'attente"}
+                    {v.status === "active" ? "Active" : "Waitlist"}
                   </Badge>
                 </div>
               ))}
@@ -146,31 +146,31 @@ export default function AgentDashboardPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="font-[var(--font-display)] text-xl">Prochaine action</CardTitle>
+              <CardTitle className="font-[var(--font-display)] text-xl">Next action</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="rounded-[22px] border border-border bg-white/65 p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold">
                   <CalendarClock className="size-4 text-primary" />
-                  Re-scoring marché électricité
+                  Electricity market re-scoring
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">Programmé le {formatted}</p>
+                <p className="mt-1 text-xs text-muted-foreground">Scheduled on {formatted}</p>
                 <Progress value={62} className="mt-3" />
                 <p className="mt-2 text-xs text-muted-foreground">
-                  Vous serez notifié uniquement si une offre dépasse le seuil de 80 €/an.
+                  You'll only be notified if an offer beats the €80/year threshold.
                 </p>
               </div>
               <div className="rounded-[22px] border border-primary/30 bg-primary/7 p-4">
                 <div className="flex items-center gap-2 text-sm font-semibold">
                   <Sparkles className="size-4 text-primary" />
-                  Passez en Autopilot
+                  Switch to Autopilot
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  L'agent valide les switchs sous votre seuil sans vous redemander. Inclus dans Premium.
+                  The agent confirms switches under your threshold without asking again. Included in Premium.
                 </p>
                 <Link href="/pricing">
                   <Button size="sm" variant="accent" className="mt-3">
-                    Découvrir Premium
+                    Discover Premium
                   </Button>
                 </Link>
               </div>
@@ -181,22 +181,22 @@ export default function AgentDashboardPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="font-[var(--font-display)] text-xl">État du contrat surveillé</CardTitle>
+          <CardTitle className="font-[var(--font-display)] text-xl">Monitored contract status</CardTitle>
         </CardHeader>
         <CardContent>
           {billData ? (
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-[20px] border border-border bg-white/65 p-4">
-                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Fournisseur</div>
+                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Provider</div>
                 <div className="mt-1 font-semibold">{billData.providerName}</div>
                 <p className="text-xs text-muted-foreground">{billData.offerName}</p>
               </div>
               <div className="rounded-[20px] border border-border bg-white/65 p-4">
-                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Tarif & puissance</div>
+                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Tariff & power</div>
                 <div className="mt-1 font-semibold">{billData.tariffOption} · {billData.meterPowerKva} kVA</div>
               </div>
               <div className="rounded-[20px] border border-border bg-white/65 p-4">
-                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Dernier coût annuel</div>
+                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Latest annual cost</div>
                 <div className="mt-1 font-semibold">{formatCurrency(comparison?.currentAnnualCostEur ?? 0)}</div>
               </div>
             </div>
@@ -204,10 +204,10 @@ export default function AgentDashboardPage() {
             <div className="rounded-[22px] border border-dashed border-border bg-white/50 p-6 text-center">
               <Activity className="mx-auto mb-3 size-6 text-muted-foreground" />
               <p className="text-sm text-muted-foreground">
-                Aucun contrat connecté. Activez votre agent en moins de 60 secondes.
+                No contract connected. Activate your agent in under 60 seconds.
               </p>
               <Link href="/connect">
-                <Button size="sm" variant="accent" className="mt-3">Activer mon agent</Button>
+                <Button size="sm" variant="accent" className="mt-3">Activate my agent</Button>
               </Link>
             </div>
           )}

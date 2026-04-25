@@ -23,7 +23,7 @@ export function PathChoiceCard({
         <div className="flex items-center justify-between gap-3">
           <CardTitle className="text-xl">{title}</CardTitle>
           {recommended ? (
-            <div className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">Recommandé</div>
+            <div className="rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">Recommended</div>
           ) : null}
         </div>
         <CardDescription>{description}</CardDescription>

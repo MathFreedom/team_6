@@ -4,12 +4,12 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Nova",
     short_name: "Nova",
-    description: "Votre agent IA qui réduit vos charges récurrentes, en pilote automatique. On commence par l'électricité.",
+    description: "Your AI agent that cuts your recurring charges on autopilot. We start with electricity.",
     start_url: "/",
     display: "standalone",
     background_color: "#f6f6ef",
     theme_color: "#2d5b3f",
-    lang: "fr",
+    lang: "en",
     icons: [
       {
         src: "/icons/icon.svg",

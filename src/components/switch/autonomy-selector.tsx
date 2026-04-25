@@ -7,18 +7,18 @@ import type { AutonomyLevel } from "@/types/energy";
 const options = [
   {
     value: "alert",
-    title: "Alerte",
-    description: "Nova surveille et vous notifie, sans rien préparer.",
+    title: "Alert",
+    description: "Nova watches and notifies you, without preparing anything.",
   },
   {
     value: "assistant",
     title: "Assistant",
-    description: "Nova prépare le dossier et vous laisse confirmer au bon moment.",
+    description: "Nova prepares the case and lets you confirm at the right moment.",
   },
   {
     value: "autopilot",
     title: "Autopilot",
-    description: "Nova agit automatiquement dans le cadre que vous avez défini.",
+    description: "Nova acts automatically within the rules you defined.",
   },
 ] satisfies {
   value: AutonomyLevel;

@@ -22,21 +22,21 @@ export function HeroSection() {
           <div className="space-y-6">
             <Badge variant="accent" className="w-fit">
               <Sparkles className="size-3.5" />
-              Nova · agent énergie
+              Nova · energy agent
             </Badge>
             <h1 className="max-w-2xl font-[var(--font-display)] text-4xl font-semibold leading-tight sm:text-6xl">
-              Votre facture d&apos;électricité, optimisée en 3 minutes depuis votre téléphone.
+              Your electricity bill, optimized in 3 minutes from your phone.
             </h1>
             <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
-              Nova lit votre facture, compare les offres françaises avec vos préférences, puis prépare le switch.
-              Vous gardez la main: <strong>Alerte</strong>, <strong>Assistant</strong> ou <strong>Autopilot</strong>.
+              Nova reads your bill, compares French offers against your preferences, then prepares the switch.
+              You stay in control: <strong>Alert</strong>, <strong>Assistant</strong> or <strong>Autopilot</strong>.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
             {[
-              { title: "Connexion Linky", body: "Ou import facture par photo / PDF." },
-              { title: "Comparaison neutre", body: "Offres françaises scorées sur vos critères." },
-              { title: "Switch guidé", body: "Décision claire, action en un tap." },
+              { title: "Linky connection", body: "Or import a bill via photo / PDF." },
+              { title: "Neutral comparison", body: "French offers scored on your criteria." },
+              { title: "Guided switch", body: "Clear decision, action in one tap." },
             ].map((item) => (
               <div key={item.title} className="rounded-[22px] border border-white/70 bg-white/75 px-4 py-3">
                 <div className="text-sm font-semibold">{item.title}</div>
@@ -46,7 +46,7 @@ export function HeroSection() {
           </div>
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-border/80 bg-white/70 px-4 py-2 text-xs text-muted-foreground">
             <ShieldCheck className="size-3.5 text-primary" />
-            Aucun engagement · données chiffrées · démo offline disponible
+            No commitment · encrypted data · offline demo available
           </div>
         </CardContent>
       </Card>
@@ -55,13 +55,13 @@ export function HeroSection() {
         <CardContent className="flex h-full flex-col items-center gap-5 p-6 text-center sm:p-8">
           <Badge variant="outline" className="w-fit border-white/25 bg-white/10 text-white">
             <Smartphone className="size-3.5" />
-            Démarrer sur mobile
+            Start on mobile
           </Badge>
           <h2 className="font-[var(--font-display)] text-2xl font-semibold sm:text-3xl">
-            Scannez ce QR code
+            Scan this QR code
           </h2>
           <p className="max-w-xs text-sm text-primary-foreground/85">
-            Pointez l&apos;appareil photo de votre téléphone. Le parcours Nova s&apos;ouvre directement dans votre navigateur mobile.
+            Point your phone&apos;s camera at it. The Nova journey opens directly in your mobile browser.
           </p>
           <div className="rounded-[28px] border border-white/20 bg-white p-5 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.55)]">
             {url ? (
@@ -77,7 +77,7 @@ export function HeroSection() {
           ) : null}
           <div className="inline-flex items-center gap-2 text-xs text-primary-foreground/75">
             <Wifi className="size-3.5" />
-            Téléphone et ordinateur sur le même Wi-Fi
+            Phone and computer on the same Wi-Fi
           </div>
         </CardContent>
       </Card>

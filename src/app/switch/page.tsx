@@ -47,13 +47,13 @@ export default function SwitchPage() {
         });
         const payload = await response.json();
         if (!response.ok) {
-          throw new Error(payload.error || "Simulation impossible");
+          throw new Error(payload.error || "Simulation failed");
         }
         setSwitchState(payload.switchState);
-        toast.success("Switch simulé avec succès.");
+        toast.success("Switch simulated successfully.");
         router.push("/success");
       } catch (caughtError) {
-        toast.error(caughtError instanceof Error ? caughtError.message : "Simulation impossible");
+        toast.error(caughtError instanceof Error ? caughtError.message : "Simulation failed");
       }
     });
   };
@@ -63,9 +63,9 @@ export default function SwitchPage() {
       <ProgressStepper currentPath="/switch" />
       <Card>
         <CardHeader className="space-y-3">
-          <CardTitle className="text-2xl">Choisissez le mode d'exécution</CardTitle>
+          <CardTitle className="text-2xl">Choose the execution mode</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Une fois le mode choisi, Nova simule la suite du workflow de souscription.
+            Once the mode is chosen, Nova simulates the rest of the subscription workflow.
           </p>
         </CardHeader>
         <CardContent className="space-y-5">
@@ -74,7 +74,7 @@ export default function SwitchPage() {
               {comparison.bestOffer.providerName} · {comparison.bestOffer.offerName}
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
-              Coût estimé: {formatCurrency(comparison.bestOfferAnnualCostEur ?? 0)} · gain annuel:{" "}
+              Estimated cost: {formatCurrency(comparison.bestOfferAnnualCostEur ?? 0)} · annual savings:{" "}
               {formatCurrency(comparison.annualSavingsEur)}
             </p>
           </div>
@@ -87,20 +87,20 @@ export default function SwitchPage() {
         <Dialog>
           <DialogTrigger asChild>
             <Button size="lg" variant="accent" className="w-full">
-              Confirmer le switch
+              Confirm the switch
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Dernière validation</DialogTitle>
+              <DialogTitle>Final confirmation</DialogTitle>
               <DialogDescription>
-                Nova va simuler l'activation du nouveau contrat en mode {autonomyLevel}.
+                Nova will simulate activating the new contract in {autonomyLevel} mode.
               </DialogDescription>
             </DialogHeader>
             <div className="mt-4 flex justify-end">
               <Button onClick={confirmSwitch} disabled={isPending}>
                 {isPending ? <LoaderCircle className="size-4 animate-spin" /> : null}
-                Lancer la simulation
+                Run the simulation
               </Button>
             </div>
           </DialogContent>

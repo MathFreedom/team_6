@@ -52,7 +52,7 @@ export default function ResultsPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Lecture rapide</CardTitle>
+          <CardTitle>Quick read</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="rounded-[24px] border border-border bg-white/70 p-4">
@@ -62,31 +62,31 @@ export default function ResultsPage() {
             </p>
           </div>
           <div className="rounded-[24px] border border-border bg-white/70 p-4">
-            <div className="text-sm text-muted-foreground">Coût annuel estimé aujourd'hui</div>
+            <div className="text-sm text-muted-foreground">Estimated annual cost today</div>
             <div className="mt-1 font-[var(--font-display)] text-3xl font-semibold">
               {formatCurrency(comparison.currentAnnualCostEur)}
             </div>
           </div>
           <div className="rounded-[24px] border border-border bg-white/70 p-4">
             <div className="flex items-center justify-between gap-3">
-              <div className="font-semibold">Avis de l'agent</div>
-              <Badge variant="outline">Confiance {(comparison.confidenceScore * 100).toFixed(0)}%</Badge>
+              <div className="font-semibold">Agent verdict</div>
+              <Badge variant="outline">Confidence {(comparison.confidenceScore * 100).toFixed(0)}%</Badge>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">{comparison.recommendationTextFr}</p>
           </div>
           {comparison.bestOffer ? (
             <div className="rounded-[24px] border border-primary/25 bg-primary/7 p-4">
-              <div className="text-sm text-muted-foreground">Meilleure offre détectée</div>
+              <div className="text-sm text-muted-foreground">Best offer detected</div>
               <div className="mt-1 font-semibold">
                 {comparison.bestOffer.providerName} · {comparison.bestOffer.offerName}
               </div>
               <div className="mt-2 text-sm text-muted-foreground">
-                {comparison.bestOffer.greenEnergyPercent}% vert · note {comparison.bestOffer.trustpilotRating}/5 ·{" "}
+                {comparison.bestOffer.greenEnergyPercent}% green · rating {comparison.bestOffer.trustpilotRating}/5 ·{" "}
                 {comparison.bestOffer.tariffType === "fixed"
-                  ? "prix fixe"
+                  ? "fixed price"
                   : comparison.bestOffer.tariffType === "indexed"
-                    ? "prix indexé"
-                    : "tarif réglementé"}
+                    ? "indexed price"
+                    : "regulated tariff"}
               </div>
             </div>
           ) : null}
@@ -102,24 +102,24 @@ export default function ResultsPage() {
           <CardContent className="flex items-center gap-3 p-3">
             <div className="min-w-0 flex-1">
               <div className="text-sm font-semibold">
-                {comparison.bestOffer && comparison.action === "switch" ? "Passer à l'action" : "Pas de switch maintenant"}
+                {comparison.bestOffer && comparison.action === "switch" ? "Take action" : "No switch right now"}
               </div>
               <p className="text-xs text-muted-foreground">
                 {comparison.bestOffer && comparison.action === "switch"
-                  ? "Le prochain écran prépare le mode d'exécution."
-                  : "Nova peut continuer à surveiller une meilleure fenêtre."}
+                  ? "The next screen sets up the execution mode."
+                  : "Nova can keep watching for a better window."}
               </p>
             </div>
             {comparison.bestOffer && comparison.action === "switch" ? (
               <Link href="/switch">
                 <Button size="lg" variant="accent">
-                  Continuer
+                  Continue
                   <ArrowRight className="size-4" />
                 </Button>
               </Link>
             ) : (
               <Button size="lg" variant="accent" disabled>
-                Attendre
+                Wait
               </Button>
             )}
           </CardContent>

@@ -55,14 +55,14 @@ export default function PreferencesPage() {
         });
         const payload = await response.json();
         if (!response.ok) {
-          throw new Error(payload.error || "Comparaison impossible");
+          throw new Error(payload.error || "Comparison failed");
         }
 
         setComparison(payload.comparison);
-        toast.success("Comparaison terminée.");
+        toast.success("Comparison complete.");
         router.push("/results");
       } catch (caughtError) {
-        toast.error(caughtError instanceof Error ? caughtError.message : "Comparaison impossible");
+        toast.error(caughtError instanceof Error ? caughtError.message : "Comparison failed");
       }
     });
   };
@@ -72,58 +72,58 @@ export default function PreferencesPage() {
       <ProgressStepper currentPath="/preferences" />
       <Card>
         <CardHeader className="space-y-3">
-          <CardTitle className="text-2xl">Cadrez la décision</CardTitle>
+          <CardTitle className="text-2xl">Frame the decision</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Réglez les quelques critères qui comptent. Le reste du travail de comparaison est automatisé.
+            Set the few criteria that matter. The rest of the comparison work is automated.
           </p>
         </CardHeader>
         <CardContent className="space-y-6">
           <PreferenceCardGroup
-            title="Type d'énergie"
+            title="Energy type"
             value={preferences.energyType}
             onChange={(energyType) => setLocalPreferences((prev) => ({ ...prev, energyType }))}
             options={[
-              { value: "renewable_only", label: "100% renouvelable", hint: "Filtre strict sur les offres vertes." },
-              { value: "mixed", label: "Mix équilibré", hint: "Un bon compromis si le rapport qualité-prix est meilleur." },
-              { value: "no_preference", label: "Sans préférence", hint: "L'agent arbitre librement selon le score global." },
+              { value: "renewable_only", label: "100% renewable", hint: "Strict filter on green offers." },
+              { value: "mixed", label: "Balanced mix", hint: "A good compromise if the value is better." },
+              { value: "no_preference", label: "No preference", hint: "The agent decides freely on overall score." },
             ]}
           />
           <PreferenceCardGroup
-            title="Priorité de décision"
+            title="Decision priority"
             value={preferences.pricePriority}
             onChange={(pricePriority) => setLocalPreferences((prev) => ({ ...prev, pricePriority }))}
             options={[
-              { value: "cheapest", label: "Le moins cher", hint: "Objectif coût minimal." },
-              { value: "best_value", label: "Meilleur rapport qualité-prix", hint: "Prix, confiance et qualité du fournisseur." },
+              { value: "cheapest", label: "Cheapest", hint: "Minimize cost." },
+              { value: "best_value", label: "Best value", hint: "Price, trust and provider quality." },
             ]}
           />
           <PreferenceCardGroup
-            title="Stabilité tarifaire"
+            title="Tariff stability"
             value={preferences.tariffStability}
             onChange={(tariffStability) => setLocalPreferences((prev) => ({ ...prev, tariffStability }))}
             options={[
-              { value: "fixed_only", label: "Fixe uniquement", hint: "Je verrouille le prix." },
-              { value: "prefer_fixed", label: "Fixe de préférence", hint: "Je privilégie la stabilité sans l'imposer." },
-              { value: "prefer_indexed", label: "Indexé de préférence", hint: "Je vise la meilleure performance marché." },
-              { value: "no_preference", label: "Aucune préférence", hint: "Le score final décide." },
+              { value: "fixed_only", label: "Fixed only", hint: "Lock the price." },
+              { value: "prefer_fixed", label: "Prefer fixed", hint: "Favor stability without forcing it." },
+              { value: "prefer_indexed", label: "Prefer indexed", hint: "Aim for best market performance." },
+              { value: "no_preference", label: "No preference", hint: "The final score decides." },
             ]}
           />
           <PreferenceCardGroup
-            title="Origine du fournisseur"
+            title="Provider origin"
             value={preferences.providerOrigin}
             onChange={(providerOrigin) => setLocalPreferences((prev) => ({ ...prev, providerOrigin }))}
             options={[
-              { value: "french_only", label: "Français uniquement", hint: "Filtre strict." },
-              { value: "prefer_french", label: "Français de préférence", hint: "Bonus pour les acteurs français." },
-              { value: "no_preference", label: "Aucune préférence", hint: "Je regarde tout le marché." },
+              { value: "french_only", label: "French only", hint: "Strict filter." },
+              { value: "prefer_french", label: "Prefer French", hint: "Bonus for French players." },
+              { value: "no_preference", label: "No preference", hint: "I look at the whole market." },
             ]}
           />
 
           <div className="space-y-3">
-            <h3 className="font-[var(--font-display)] text-lg font-semibold">Niveau de réputation minimum</h3>
+            <h3 className="font-[var(--font-display)] text-lg font-semibold">Minimum reputation</h3>
             <div className="rounded-[24px] border border-border bg-white/70 p-4">
               <div className="mb-4 flex items-center justify-between gap-3 text-sm">
-                <span>Trustpilot minimum</span>
+                <span>Minimum Trustpilot</span>
                 <span className="font-semibold">{preferences.minimumTrustpilotRating.toFixed(1)} / 5</span>
               </div>
               <Slider
@@ -144,12 +144,12 @@ export default function PreferencesPage() {
         <Card className="border-primary/15 bg-white/88">
           <CardContent className="flex items-center gap-3 p-3">
             <div className="min-w-0 flex-1">
-              <div className="text-sm font-semibold">Comparer le marché maintenant</div>
-              <p className="text-xs text-muted-foreground">Nova applique vos règles au profil extrait.</p>
+              <div className="text-sm font-semibold">Compare the market now</div>
+              <p className="text-xs text-muted-foreground">Nova applies your rules to the extracted profile.</p>
             </div>
             <Button size="lg" variant="accent" onClick={submit} disabled={isPending} className="shrink-0">
               {isPending ? <LoaderCircle className="size-4 animate-spin" /> : null}
-              Comparer
+              Compare
             </Button>
           </CardContent>
         </Card>

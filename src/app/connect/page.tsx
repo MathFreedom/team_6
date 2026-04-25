@@ -10,9 +10,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useJourneyStore } from "@/lib/store/journey-store";
 
 const checklist = [
-  "On part de votre donnée réelle",
-  "Aucune saisie longue",
-  "Résultat exploitable juste après l'analyse",
+  "We start from your real data",
+  "No long form to fill out",
+  "Actionable result right after the analysis",
 ];
 
 export default function ConnectPage() {
@@ -43,12 +43,11 @@ export default function ConnectPage() {
         <CardHeader className="space-y-3 pb-4">
           <div className="inline-flex w-fit items-center gap-2 rounded-full bg-accent/85 px-3 py-1 text-xs font-semibold text-accent-foreground">
             <Zap className="size-3.5" />
-            Étape mobile rapide
+            Quick mobile step
           </div>
-          <CardTitle className="text-2xl">Connectez votre donnée énergie</CardTitle>
+          <CardTitle className="text-2xl">Connect your energy data</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Choisissez le chemin le plus simple. Dès que la donnée entre, Nova prend le relais pour structurer votre
-            profil puis vous guider vers la décision.
+            Pick the simplest path. As soon as the data lands, Nova takes over to structure your profile and guide you to the decision.
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -63,17 +62,17 @@ export default function ConnectPage() {
 
           <div className="space-y-3">
             <PathChoiceCard
-              title="Connexion Enedis"
-              description="Le mode le plus rapide pour démarrer un profil Linky simulé et éviter la saisie manuelle."
-              cta="Se connecter"
+              title="Enedis connection"
+              description="The fastest way to start with a simulated Linky profile and skip manual entry."
+              cta="Connect"
               recommended
               disabled={isPending}
               onClick={() => launchAnalysis("enedis")}
             />
             <PathChoiceCard
-              title="Importer une facture"
-              description="Prenez une photo ou choisissez un PDF. Idéal si vous avez déjà une facture sous la main."
-              cta="Choisir un document"
+              title="Import a bill"
+              description="Take a photo or pick a PDF. Ideal if you already have a bill on hand."
+              cta="Choose a document"
               disabled={isPending}
               onClick={() => uploadInputRef.current?.click()}
             />
@@ -83,8 +82,8 @@ export default function ConnectPage() {
             inputRef={uploadInputRef}
             disabled={isPending}
             fileName={fileName}
-            title="Glissez la facture ici"
-            description="PDF, photo ou capture mobile. Le document est lu puis transformé en profil de comparaison."
+            title="Drop the bill here"
+            description="PDF, photo or mobile screenshot. The document is read and turned into a comparison profile."
             onFileSelected={(file) => {
               setFileName(file.name);
               launchAnalysis("ocr", file);
@@ -93,7 +92,7 @@ export default function ConnectPage() {
 
           <div className="flex items-start gap-3 rounded-[24px] border border-primary/15 bg-primary/6 p-4 text-sm text-muted-foreground">
             <FileText className="mt-0.5 size-4 shrink-0 text-primary" />
-            <span>Le parcours est pensé téléphone. Les boutons restent gros, l'ordre des actions est unique, et rien ne vous force à remplir un long formulaire.</span>
+            <span>The journey is built for mobile. Buttons stay big, the action order is unique, and nothing forces you through a long form.</span>
           </div>
         </CardContent>
       </Card>

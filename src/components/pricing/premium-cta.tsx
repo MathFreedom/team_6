@@ -10,7 +10,7 @@ export function PremiumCta() {
 
   const handleClick = () => {
     if (!paymentLink) {
-      window.alert("Activation Premium bientôt disponible. Inscrivez-vous à la liste d'attente sur contact@nova.fr.");
+      window.alert("Premium activation coming soon. Join the waitlist at contact@nova.fr.");
       return;
     }
     setLoading(true);
@@ -20,7 +20,7 @@ export function PremiumCta() {
   return (
     <Button variant="accent" className="w-full" onClick={handleClick} disabled={loading}>
       <Zap className="size-4" />
-      {loading ? "Redirection vers Stripe…" : "Activer Premium · 30 jours offerts"}
+      {loading ? "Redirecting to Stripe…" : "Activate Premium · 30 days free"}
     </Button>
   );
 }

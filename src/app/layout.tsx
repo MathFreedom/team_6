@@ -17,8 +17,8 @@ const displayFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Nova - Agent IA mobile pour réduire vos charges récurrentes",
-  description: "Une expérience mobile guidée pour connecter votre énergie, comparer le marché et lancer le bon switch.",
+  title: "Nova - Mobile AI agent to cut your recurring charges",
+  description: "A guided mobile experience to connect your energy, compare the market and launch the right switch.",
   applicationName: "Nova",
   appleWebApp: {
     capable: true,
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <body
         className={`${bodyFont.variable} ${displayFont.variable} page-frame bg-background font-[var(--font-body)] text-foreground antialiased`}
       >

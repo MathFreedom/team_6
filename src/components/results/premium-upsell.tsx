@@ -11,18 +11,18 @@ export function PremiumUpsell() {
         <div className="space-y-2">
           <Badge variant="accent" className="w-fit flex items-center gap-1">
             <Sparkles className="size-3" />
-            Premium · 4,99 €/mois
+            Premium · €4.99/month
           </Badge>
           <div className="font-[var(--font-display)] text-xl font-semibold">
-            Laissez l'agent agir seul à votre place
+            Let the agent act on your behalf
           </div>
           <p className="max-w-xl text-sm text-muted-foreground">
-            Mode Autopilot, surveillance 24/7, multi-charges (gaz, mobile, assurance dès leur sortie), détection d'anomalies. 30 jours offerts.
+            Autopilot mode, 24/7 monitoring, multi-charge (gas, mobile, insurance as they ship), anomaly detection. 30 days free.
           </p>
         </div>
         <Link href="/pricing">
           <Button size="lg" variant="accent">
-            Voir Premium
+            See Premium
           </Button>
         </Link>
       </CardContent>
