@@ -32,7 +32,11 @@ export interface UserBillData {
   tariffOption: TariffOption;
   tariffType: OfferTariffType;
   meterPowerKva: number;
+  prm?: string;
   pdl?: string;
+  zipcode?: string;
+  currentProviderId?: number;
+  currentOfferId?: number;
   contractReference?: string;
   annualConsumptionKwh: number;
   monthlyConsumptionKwh?: number;
@@ -70,15 +74,42 @@ export interface UserPreferences {
 
 export interface RankedOffer {
   offerId: string;
+  providerName: string;
+  offerName: string;
   annualCostEur: number;
   annualSavingsEur: number;
   matchScore: number;
   reasons: string[];
+  url?: string;
+  isGreen?: boolean;
+  isFixedPrice?: boolean;
+}
+
+export interface RecommendedOffer {
+  id: string;
+  providerName: string;
+  offerName: string;
+  annualCostEur: number;
+  annualSavingsEur: number;
+  url?: string;
+  isGreen?: boolean;
+  isFixedPrice?: boolean;
+  matchScore: number;
+  reasons: string[];
+}
+
+export interface OptimizerProfileSummary {
+  annualKwh?: number;
+  dailyAvgKwh?: number;
+  hpSharePct?: number;
+  bestHcWindow?: string;
+  weekendSharePct?: number;
+  peakPowerW?: number;
 }
 
 export interface ComparisonResult {
   currentAnnualCostEur: number;
-  bestOffer: ElectricityOffer | null;
+  bestOffer: RecommendedOffer | null;
   bestOfferAnnualCostEur: number | null;
   annualSavingsEur: number;
   monthlySavingsEur: number;
@@ -87,6 +118,9 @@ export interface ComparisonResult {
   confidenceScore: number;
   rankedOffers: RankedOffer[];
   filteredOut: { offerId: string; reason: string }[];
+  narrative?: string;
+  currentProviderName?: string | null;
+  profileSummary?: OptimizerProfileSummary | null;
 }
 
 export interface TimelineStep {
@@ -103,4 +137,3 @@ export interface SwitchSimulationState {
   estimatedAnnualSavingsEur: number;
   simulatedTimeline: TimelineStep[];
 }
-

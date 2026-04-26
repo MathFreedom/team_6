@@ -8,7 +8,11 @@ export const userBillDataSchema = z.object({
   tariffOption: z.enum(["BASE", "HP_HC", "TEMPO", "EJP"]),
   tariffType: z.enum(["fixed", "indexed", "regulated"]),
   meterPowerKva: z.number(),
+  prm: z.string().optional(),
   pdl: z.string().optional(),
+  zipcode: z.string().regex(/^\d{5}$/).optional(),
+  currentProviderId: z.number().int().positive().optional(),
+  currentOfferId: z.number().int().positive().optional(),
   contractReference: z.string().optional(),
   annualConsumptionKwh: z.number(),
   monthlyConsumptionKwh: z.number().optional(),
@@ -21,4 +25,3 @@ export const userBillDataSchema = z.object({
   extractionConfidence: z.number(),
   rawExtractText: z.string().optional(),
 });
-

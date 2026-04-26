@@ -20,6 +20,7 @@
     "@radix-ui/react-tooltip": "1.2.8",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
+    "firebase": "^12.12.1",
     "lucide-react": "0.542.0",
     "next": "15.5.2",
     "qrcode.react": "^4.2.0",

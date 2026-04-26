@@ -31,7 +31,20 @@ export async function orchestrateComparison(
 
   return {
     currentAnnualCostEur: watcher.currentAnnualCost,
-    bestOffer,
+    bestOffer:
+      bestOffer && bestRanked
+        ? {
+            id: bestOffer.id,
+            providerName: bestOffer.providerName,
+            offerName: bestOffer.offerName,
+            annualCostEur: bestRanked.annualCostEur,
+            annualSavingsEur,
+            matchScore: bestRanked.matchScore,
+            reasons: bestRanked.reasons,
+            isGreen: bestOffer.greenEnergyPercent === 100,
+            isFixedPrice: bestOffer.tariffType === "fixed",
+          }
+        : null,
     bestOfferAnnualCostEur: bestRanked?.annualCostEur ?? null,
     annualSavingsEur,
     monthlySavingsEur: monthlySavingsFromAnnual(annualSavingsEur),
@@ -40,6 +53,8 @@ export async function orchestrateComparison(
     confidenceScore: decision.confidenceScore,
     rankedOffers: watcher.rankedOffers,
     filteredOut: watcher.filteredOut,
+    currentProviderName: billData.providerName,
+    profileSummary: null,
   };
 }
 
@@ -50,4 +65,3 @@ export async function orchestrateSwitch(
 ) {
   return runExecutorAgent({ selectedOfferId, autonomyLevel, annualSavingsEur });
 }
-

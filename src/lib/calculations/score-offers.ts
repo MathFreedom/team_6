@@ -66,10 +66,14 @@ export function scoreOffers(
 
     rankedOffers.push({
       offerId: offer.id,
+      providerName: offer.providerName,
+      offerName: offer.offerName,
       annualCostEur: annualCost,
       annualSavingsEur,
       matchScore: Math.round(matchScore * 100) / 100,
       reasons,
+      isGreen: offer.greenEnergyPercent === 100,
+      isFixedPrice: offer.tariffType === "fixed",
     });
   }
 
@@ -77,4 +81,3 @@ export function scoreOffers(
 
   return { rankedOffers, filteredOut };
 }
-

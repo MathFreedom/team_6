@@ -4,6 +4,7 @@ import { useRef, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle2, FileText, Zap } from "lucide-react";
 import { ProgressStepper } from "@/components/layout/progress-stepper";
+import { ConnectAuthCard } from "@/components/onboarding/connect-auth-card";
 import { PathChoiceCard } from "@/components/onboarding/path-choice-card";
 import { UploadZone } from "@/components/onboarding/upload-zone";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,6 +39,7 @@ export default function ConnectPage() {
   return (
     <div className="app-screen space-y-4">
       <ProgressStepper currentPath="/connect" />
+      <ConnectAuthCard />
 
       <Card className="overflow-hidden">
         <CardHeader className="space-y-3 pb-4">

@@ -4,8 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
-import offers from "@/data/offers.fr.json";
-import type { ElectricityOffer } from "@/types/energy";
 import { ProgressStepper } from "@/components/layout/progress-stepper";
 import { SavingsHeroCard } from "@/components/results/savings-hero-card";
 import { OfferComparisonTable } from "@/components/results/offer-comparison-table";
@@ -39,8 +37,6 @@ export default function ResultsPage() {
     return <Skeleton className="app-screen h-[560px] w-full" />;
   }
 
-  const offerList = offers as ElectricityOffer[];
-
   return (
     <div className="app-screen space-y-4">
       <ProgressStepper currentPath="/results" />
@@ -56,17 +52,19 @@ export default function ResultsPage() {
         </CardHeader>
         <CardContent className="space-y-3">
           <div className="rounded-[24px] border border-border bg-white/70 p-4">
-            <div className="font-semibold">{billData.providerName}</div>
+            <div className="font-semibold">{comparison.currentProviderName ?? billData.providerName}</div>
             <p className="mt-1 text-sm text-muted-foreground">
               {billData.offerName} · {billData.tariffOption} · {billData.meterPowerKva} kVA
             </p>
           </div>
+
           <div className="rounded-[24px] border border-border bg-white/70 p-4">
             <div className="text-sm text-muted-foreground">Estimated annual cost today</div>
             <div className="mt-1 font-[var(--font-display)] text-3xl font-semibold">
               {formatCurrency(comparison.currentAnnualCostEur)}
             </div>
           </div>
+
           <div className="rounded-[24px] border border-border bg-white/70 p-4">
             <div className="flex items-center justify-between gap-3">
               <div className="font-semibold">Agent verdict</div>
@@ -74,6 +72,7 @@ export default function ResultsPage() {
             </div>
             <p className="mt-2 text-sm text-muted-foreground">{comparison.recommendationTextFr}</p>
           </div>
+
           {comparison.bestOffer ? (
             <div className="rounded-[24px] border border-primary/25 bg-primary/7 p-4">
               <div className="text-sm text-muted-foreground">Best offer detected</div>
@@ -81,19 +80,32 @@ export default function ResultsPage() {
                 {comparison.bestOffer.providerName} · {comparison.bestOffer.offerName}
               </div>
               <div className="mt-2 text-sm text-muted-foreground">
-                {comparison.bestOffer.greenEnergyPercent}% green · rating {comparison.bestOffer.trustpilotRating}/5 ·{" "}
-                {comparison.bestOffer.tariffType === "fixed"
-                  ? "fixed price"
-                  : comparison.bestOffer.tariffType === "indexed"
-                    ? "indexed price"
-                    : "regulated tariff"}
+                {comparison.bestOffer.isGreen ? "Green offer" : "Standard offer"} ·{" "}
+                {comparison.bestOffer.isFixedPrice ? "fixed price" : "variable price"}
               </div>
+            </div>
+          ) : null}
+
+          {comparison.profileSummary ? (
+            <div className="rounded-[24px] border border-border bg-white/70 p-4">
+              <div className="text-sm text-muted-foreground">Consumption profile</div>
+              <div className="mt-2 grid gap-2 text-sm sm:grid-cols-2">
+                <div>{comparison.profileSummary.annualKwh?.toLocaleString("fr-FR")} kWh/year</div>
+                <div>{comparison.profileSummary.dailyAvgKwh?.toFixed(2)} kWh/day</div>
+                <div>{comparison.profileSummary.hpSharePct}% peak-hours share</div>
+                <div>{comparison.profileSummary.weekendSharePct}% weekend share</div>
+              </div>
+              {comparison.profileSummary.bestHcWindow ? (
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Best off-peak window: {comparison.profileSummary.bestHcWindow}
+                </p>
+              ) : null}
             </div>
           ) : null}
         </CardContent>
       </Card>
 
-      <OfferComparisonTable rankedOffers={comparison.rankedOffers} offers={offerList} />
+      <OfferComparisonTable rankedOffers={comparison.rankedOffers} />
       <AgentSentinel />
       <PremiumUpsell />
 

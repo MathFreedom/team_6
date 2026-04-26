@@ -9,6 +9,8 @@ import { PreferenceCardGroup } from "@/components/preferences/preference-card-gr
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useJourneyStore } from "@/lib/store/journey-store";
 import { useJourneyHydrated } from "@/lib/store/use-journey-hydrated";
 import { DEFAULT_PREFERENCES } from "@/lib/constants";
@@ -21,8 +23,11 @@ export default function PreferencesPage() {
   const storedPreferences = useJourneyStore((state) => state.preferences);
   const setPreferences = useJourneyStore((state) => state.setPreferences);
   const setComparison = useJourneyStore((state) => state.setComparison);
+  const setBillData = useJourneyStore((state) => state.setBillData);
   const [isPending, startTransition] = useTransition();
   const [preferences, setLocalPreferences] = useState(storedPreferences ?? DEFAULT_PREFERENCES);
+  const [prm, setPrm] = useState(billData?.prm ?? billData?.pdl ?? "");
+  const [zipcode, setZipcode] = useState(billData?.zipcode ?? "");
 
   useEffect(() => {
     if (hydrated && !billData) {
@@ -36,6 +41,13 @@ export default function PreferencesPage() {
     }
   }, [hydrated, storedPreferences]);
 
+  useEffect(() => {
+    if (hydrated && billData) {
+      setPrm(billData.prm ?? billData.pdl ?? "");
+      setZipcode(billData.zipcode ?? "");
+    }
+  }, [billData, hydrated]);
+
   if (!hydrated) {
     return <Skeleton className="app-screen h-[480px] w-full" />;
   }
@@ -47,11 +59,29 @@ export default function PreferencesPage() {
   const submit = () => {
     startTransition(async () => {
       try {
+        const normalizedPrm = prm.replace(/\D/g, "");
+        const normalizedZipcode = zipcode.replace(/\D/g, "");
+
+        if (!/^\d{14}$/.test(normalizedPrm)) {
+          throw new Error("Renseignez un PRM Linky valide à 14 chiffres.");
+        }
+
+        if (!/^\d{5}$/.test(normalizedZipcode)) {
+          throw new Error("Renseignez un code postal valide à 5 chiffres.");
+        }
+
+        const nextBillData = {
+          ...billData,
+          prm: normalizedPrm,
+          zipcode: normalizedZipcode,
+        };
+
         setPreferences(preferences);
+        setBillData(nextBillData);
         const response = await fetch("/api/compare", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ billData, preferences }),
+          body: JSON.stringify({ billData: nextBillData, preferences }),
         });
         const payload = await response.json();
         if (!response.ok) {
@@ -78,6 +108,37 @@ export default function PreferencesPage() {
           </p>
         </CardHeader>
         <CardContent className="space-y-6">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="prm">PRM Linky</Label>
+              <Input
+                id="prm"
+                inputMode="numeric"
+                maxLength={14}
+                placeholder="07386541234022"
+                value={prm}
+                onChange={(event) => setPrm(event.target.value.replace(/\D/g, "").slice(0, 14))}
+              />
+              <p className="text-xs text-muted-foreground">
+                Prérempli depuis la facture ou la connexion quand disponible.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="zipcode">Code postal</Label>
+              <Input
+                id="zipcode"
+                inputMode="numeric"
+                maxLength={5}
+                placeholder="75001"
+                value={zipcode}
+                onChange={(event) => setZipcode(event.target.value.replace(/\D/g, "").slice(0, 5))}
+              />
+              <p className="text-xs text-muted-foreground">
+                Requis par le moteur de recommandation pour interroger le catalogue réel.
+              </p>
+            </div>
+          </div>
+
           <PreferenceCardGroup
             title="Energy type"
             value={preferences.energyType}

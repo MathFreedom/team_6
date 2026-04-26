@@ -7,7 +7,11 @@ export const sampleLinkyProfile: UserBillData = {
   tariffOption: "HP_HC",
   tariffType: "regulated",
   meterPowerKva: 6,
+  prm: "14293847561092",
   pdl: "14293847561092",
+  zipcode: "75001",
+  currentProviderId: 159,
+  currentOfferId: 6887,
   contractReference: "EDF-HEC-2026-0425",
   annualConsumptionKwh: 7400,
   monthlyConsumptionKwh: 617,
@@ -34,4 +38,3 @@ export async function simulateEnedisConnect() {
   await new Promise((resolve) => setTimeout(resolve, 1400));
   return sampleLinkyProfile;
 }
-

@@ -12,12 +12,13 @@ export function AppHeader() {
   const router = useRouter();
   const resetJourney = useJourneyStore((state) => state.resetJourney);
   const isHome = pathname === "/";
+  const showBackButton = !isHome && pathname !== "/connect";
 
   return (
     <header className="sticky top-0 z-40 py-3">
       <div className="glass flex items-center justify-between gap-3 rounded-[28px] border border-border/80 px-3 py-3 shadow-sm sm:px-4">
         <div className="flex items-center gap-3">
-          {!isHome ? (
+          {showBackButton ? (
             <Button variant="ghost" size="icon" onClick={() => router.back()} aria-label="Back">
               <ChevronLeft className="size-5" />
             </Button>
