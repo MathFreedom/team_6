@@ -9,10 +9,6 @@
   Hackathon MVP built with <code>Next.js</code>, combining a PWA flow, bill OCR, offer comparison, and a simulated provider switch.
 </p>
 
-<p align="center">
-  <img src="./public/icons/icon.svg" alt="Nova logo" width="64" />
-</p>
-
 ## Table of Contents
 
 - [Overview](#overview)
