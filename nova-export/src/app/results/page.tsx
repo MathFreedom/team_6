@@ -94,7 +94,7 @@ export default function ResultsPage() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-[430px] flex-col bg-white text-[#0a1628]">
       {/* Header */}
-      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-black/5 bg-white px-6 py-4 pt-safe">
+      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-black/5 bg-white px-6 py-4">
         <button
           onClick={() => router.push("/dashboard")}
           aria-label="Retour"
@@ -131,7 +131,7 @@ export default function ResultsPage() {
 
         {/* Mascotte */}
         <div className="mt-6">
-          <MascotBubble gecko="/mascot/result.svg" message="J'ai analysé ton profil et ta consommation. Voici les 3 offres qui te font économiser le plus tout en restant adaptées à tes habitudes." />
+          <MascotBubble message="J'ai analysé ton profil et ta consommation. Voici les 3 offres qui te font économiser le plus tout en restant adaptées à tes habitudes." />
         </div>
 
         {/* Liste offres */}

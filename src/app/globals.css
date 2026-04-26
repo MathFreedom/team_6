@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f5ea;
-  --foreground: #102018;
-  --card: rgba(255, 255, 255, 0.82);
-  --card-foreground: #102018;
-  --border: rgba(16, 32, 24, 0.08);
-  --muted: #edf2d7;
-  --muted-foreground: #5f6d63;
-  --primary: #2f6a49;
-  --primary-foreground: #f7faf8;
-  --accent: #d9ff64;
-  --accent-foreground: #18301f;
-  --ring: rgba(47, 106, 73, 0.35);
-  --danger: #b91c1c;
+  --background: #ffffff;
+  --foreground: #0a1628;
+  --card: #ffffff;
+  --card-foreground: #0a1628;
+  --border: rgba(10, 22, 40, 0.08);
+  --muted: #f4f7fb;
+  --muted-foreground: #5a6b80;
+  --primary: #1e40af;
+  --primary-foreground: #ffffff;
+  --accent: #dbeafe;
+  --accent-foreground: #1e40af;
+  --ring: rgba(30, 64, 175, 0.35);
+  --danger: #dc2626;
+  --success: #059669;
 }
 
 @theme inline {
@@ -30,6 +31,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-ring: var(--ring);
   --color-danger: var(--danger);
+  --color-success: var(--success);
 }
 
 * {
@@ -43,10 +45,8 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(217, 255, 100, 0.45), transparent 24%),
-    radial-gradient(circle at top right, rgba(47, 106, 73, 0.12), transparent 24%),
-    linear-gradient(180deg, #fafbf1 0%, #f4f5ea 36%, #edf2d9 100%);
+  min-height: 100dvh;
+  background: var(--background);
   color: var(--foreground);
 }
 
@@ -59,78 +59,93 @@ button {
   cursor: pointer;
 }
 
-.glass {
-  background: var(--card);
-  backdrop-filter: blur(18px);
+/* === Safe area iPhone (notch + home indicator) === */
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top), 12px);
+}
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 16px);
+}
+.pl-safe {
+  padding-left: env(safe-area-inset-left);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right);
+}
+/* Force la zone safe sur le top quand le contenu est sticky */
+.top-safe {
+  top: env(safe-area-inset-top);
 }
 
-.page-frame {
-  position: relative;
-}
-
-.page-frame::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent 36%),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 34px,
-      rgba(47, 106, 73, 0.03) 34px,
-      rgba(47, 106, 73, 0.03) 35px
-    );
-}
-
-.app-screen {
-  width: 100%;
-  max-width: 430px;
-  margin-inline: auto;
-}
-
-@media (max-width: 640px) {
-  .page-frame::before {
-    background:
-      linear-gradient(150deg, rgba(255, 255, 255, 0.32), transparent 38%),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 22px,
-        rgba(47, 106, 73, 0.028) 22px,
-        rgba(47, 106, 73, 0.028) 23px
-      );
-  }
-}
-
+/* === Animations === */
 @keyframes pulse-line {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scaleX(0.92);
-  }
-  50% {
-    opacity: 1;
-    transform: scaleX(1);
-  }
+  0%, 100% { opacity: 0.35; transform: scaleX(0.92); }
+  50% { opacity: 1; transform: scaleX(1); }
 }
-
 .animate-pulse-line {
   animation: pulse-line 1.8s ease-in-out infinite;
 }
 
 @keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
 .animate-rise-in {
   animation: rise-in 0.45s ease-out both;
+}
+
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-mascot-float {
+  animation: mascot-float 2.5s ease-in-out infinite;
+}
+
+@keyframes mascot-celebrate {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.04) rotate(-2deg); }
+  75% { transform: scale(1.04) rotate(2deg); }
+}
+.animate-mascot-celebrate {
+  animation: mascot-celebrate 1.2s ease-in-out infinite;
+}
+
+@keyframes celebration-bounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.04) rotate(-2deg); }
+  75% { transform: scale(1.04) rotate(2deg); }
+}
+.animate-celebration-bounce {
+  animation: celebration-bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, 0) scale(1); }
+  50% { opacity: 0.5; transform: translate(-50%, 0) scale(1.1); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* === Utilities legacy (pages Ramzy : agent, b2g, connect, etc.) === */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+}
+.page-frame {
+  position: relative;
+}
+.app-screen {
+  width: 100%;
+  max-width: 430px;
+  margin-inline: auto;
+}
+.animate-confetti-fall {
+  animation: confetti-fall linear forwards;
 }

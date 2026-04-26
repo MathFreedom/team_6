@@ -18,24 +18,24 @@ type Phase = { image: string; message: string };
 
 const PHASES: Phase[] = [
   {
-    image: "/mascot/scanning.svg",
+    image: "/mascot/searching.png",
     message: "Je récupère ton numéro PRM...",
   },
   {
-    image: "/mascot/Analysing.svg",
+    image: "/mascot/connecting.png",
     message: "Je me connecte à Enedis et à ton Linky...",
   },
   {
-    image: "/mascot/analyzing-2.svg",
+    image: "/mascot/thinking.png",
     message: "J'analyse ton profil de consommation...",
   },
   {
-    image: "/mascot/Analyzing-3.svg",
+    image: "/mascot/scanning.png",
     message: "Je compare les 78 offres du marché...",
   },
   {
-    image: "/mascot/result.svg",
-    message: "J'ai trouvé tes meilleures recommandations !",
+    image: "/mascot/eureka.png",
+    message: "Je prépare tes meilleures recommandations !",
   },
 ];
 

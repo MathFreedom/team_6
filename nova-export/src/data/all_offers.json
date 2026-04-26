@@ -1,0 +1,152 @@
+{
+  "fetched_at": "2025-01-15T00:00:00Z",
+  "source": "seed-mock",
+  "n_providers": 8,
+  "n_offers": 14,
+  "offers": [
+    {
+      "id": 6887,
+      "provider_id": 1,
+      "provider_name": "EDF",
+      "name": "Tarif Bleu - réglementé (particuliers)",
+      "description": "Tarif réglementé de vente. Prix du kWh : 0,2516 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "151.20" }
+    },
+    {
+      "id": 6888,
+      "provider_id": 1,
+      "provider_name": "EDF",
+      "name": "Vert Électrique",
+      "description": "Offre verte indexée. Prix du kWh : 0,2370 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "159.36" }
+    },
+    {
+      "id": 6889,
+      "provider_id": 1,
+      "provider_name": "EDF",
+      "name": "Tempo",
+      "description": "Tarif Tempo : 6 couleurs de jours. Bleu HC 0,1296 €/kWh, Rouge HP 0,7562 €/kWh.",
+      "tariff_types_seen": [2],
+      "prices": { "subscribing": "155.40" }
+    },
+    {
+      "id": 6890,
+      "provider_id": 2,
+      "provider_name": "ENGIE",
+      "name": "Référence Élec",
+      "description": "Offre indexée sur le tarif réglementé. Prix du kWh : 0,2516 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "151.20" }
+    },
+    {
+      "id": 6891,
+      "provider_id": 2,
+      "provider_name": "ENGIE",
+      "name": "Élec Adapt",
+      "description": "Prix du kWh adapté à votre profil. 0,2410 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "163.92" }
+    },
+    {
+      "id": 6892,
+      "provider_id": 3,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Verte Fixe",
+      "description": "Prix du kWh fixe pendant 1 an. 0,2398 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "147.96" }
+    },
+    {
+      "id": 6893,
+      "provider_id": 3,
+      "provider_name": "TotalEnergies",
+      "name": "Heures Éco",
+      "description": "Réduction sur 8h creuses. HC 0,1715 €/kWh, HP 0,2614 €/kWh.",
+      "tariff_types_seen": [2],
+      "prices": { "subscribing": "165.00" }
+    },
+    {
+      "id": 6894,
+      "provider_id": 4,
+      "provider_name": "Octopus Energy",
+      "name": "Tarif Vert",
+      "description": "100% énergie verte. Prix du kWh : 0,2401 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "149.40" }
+    },
+    {
+      "id": 6895,
+      "provider_id": 5,
+      "provider_name": "Mint Énergie",
+      "name": "Online & Green",
+      "description": "Offre 100% en ligne. 0,2299 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "144.84" }
+    },
+    {
+      "id": 6896,
+      "provider_id": 6,
+      "provider_name": "Ekwateur",
+      "name": "Électricité Verte",
+      "description": "Offre 100% renouvelable. 0,2452 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "152.40" }
+    },
+    {
+      "id": 6897,
+      "provider_id": 7,
+      "provider_name": "Alterna",
+      "name": "Idéa",
+      "description": "Offre simple et locale. 0,2512 €/kWh.",
+      "tariff_types_seen": [1],
+      "prices": { "subscribing": "151.92" }
+    },
+    {
+      "id": 6898,
+      "provider_id": 8,
+      "provider_name": "Vattenfall",
+      "name": "Énergie Garantie 2 ans",
+      "description": "Prix bloqué 2 ans. 0,2389 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "148.80" }
+    },
+    {
+      "id": 6899,
+      "provider_id": 1,
+      "provider_name": "EDF",
+      "name": "Zen Fixe",
+      "description": "Prix bloqué 1 an. 0,2480 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "151.20" }
+    },
+    {
+      "id": 6900,
+      "provider_id": 4,
+      "provider_name": "Octopus Energy",
+      "name": "Heures Éco",
+      "description": "Tarif HP/HC. HC 0,1820 €/kWh.",
+      "tariff_types_seen": [2],
+      "prices": { "subscribing": "159.96" }
+    },
+    {
+      "id": 6901,
+      "provider_id": 1,
+      "provider_name": "EDF",
+      "name": "Vert Électrique Régional",
+      "description": "Origine locale garantie. 0,2412 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "157.20" }
+    },
+    {
+      "id": 6902,
+      "provider_id": 1,
+      "provider_name": "EDF",
+      "name": "Mes Jours Zen",
+      "description": "Week-ends à prix réduit. 0,2390 €/kWh.",
+      "tariff_types_seen": [1, 2],
+      "prices": { "subscribing": "152.40" }
+    }
+  ]
+}

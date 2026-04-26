@@ -196,7 +196,7 @@ export default function SuccessPage() {
         />
         <div className="animate-celebration-bounce relative h-full w-full">
           <Image
-            src="/mascot/success.svg"
+            src="/mascot/dancing.png"
             alt="Nova fête le switch"
             fill
             priority
