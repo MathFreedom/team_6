@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, CheckCircle2, ShieldCheck } from "lucide-react";
 import { MascotBubble } from "@/components/onboarding/MascotBubble";
+import { ProviderLogo } from "@/components/providers/ProviderLogo";
 
 type SelectedOffer = {
   id: number;
@@ -142,15 +143,20 @@ export default function MandatePage() {
           >
             Tu vas switcher vers
           </p>
-          <p
-            className="mt-2 text-xs font-medium uppercase tracking-wider"
-            style={{ color: "#5a6b80" }}
-          >
-            {offer?.provider ?? "—"}
-          </p>
-          <p className="mt-1 text-lg font-semibold">
-            {offer?.offerName ?? "Ton offre sélectionnée"}
-          </p>
+          <div className="mt-3 flex items-center gap-3">
+            {offer?.provider ? <ProviderLogo name={offer.provider} size={48} /> : null}
+            <div className="min-w-0">
+              <p
+                className="text-xs font-medium uppercase tracking-wider"
+                style={{ color: "#5a6b80" }}
+              >
+                {offer?.provider ?? "—"}
+              </p>
+              <p className="text-lg font-semibold leading-tight">
+                {offer?.offerName ?? "Ton offre sélectionnée"}
+              </p>
+            </div>
+          </div>
 
           <div
             className="my-4 border-t"

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Check } from "lucide-react";
 import { MascotBubble } from "@/components/onboarding/MascotBubble";
+import { ProviderLogo } from "@/components/providers/ProviderLogo";
 
 type Offer = {
   id: number;
@@ -170,13 +171,7 @@ export default function ResultsPage() {
                         <Check className="h-3.5 w-3.5 text-white" strokeWidth={3} />
                       </span>
                     )}
-                    <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full text-xs font-medium"
-                      style={{ backgroundColor: "#f3f4f6", color: "#0a1628" }}
-                      aria-hidden
-                    >
-                      {initials(offer.provider)}
-                    </span>
+                    <ProviderLogo name={offer.provider} size={40} />
                   </div>
                 </div>
 

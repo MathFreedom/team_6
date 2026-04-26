@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ContractProgress } from "@/components/contract/ContractProgress";
 import { MascotBubble } from "@/components/onboarding/MascotBubble";
+import { ProviderLogo } from "@/components/providers/ProviderLogo";
 import offersData from "@/data/all_offers.json";
 
 const STORAGE_KEY = "nova-signup";
@@ -132,18 +133,7 @@ export default function ProviderPage() {
                     boxShadow: "0 1px 2px rgba(10,22,40,0.04)",
                   }}
                 >
-                  {/* Cercle initiales — placeholder pour futur logo */}
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    style={{
-                      background: isSelected ? "#ffffff" : "#f3f4f6",
-                      color: isSelected ? "#1e40af" : "#0a1628",
-                    }}
-                  >
-                    <span className="text-xs font-semibold tracking-wide">
-                      {initials(provider)}
-                    </span>
-                  </div>
+                  <ProviderLogo name={provider} size={40} />
 
                   <span className="flex-1 text-base font-medium text-[#0a1628]">
                     {provider}
