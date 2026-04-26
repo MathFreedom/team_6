@@ -1,0 +1,29 @@
+runConfig:
+  minInstances: 0
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: "AIzaSyDcb4d0Yo2Hqq7FFmpMsoIQeDGJiqR39xk"
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: "nova-8ff75.firebaseapp.com"
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: "nova-8ff75"
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: "nova-8ff75.firebasestorage.app"
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "888475401257"
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: "1:888475401257:web:616754f4c2b8cbe127f038"
+  - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    value: "G-K6H1W08ETN"
+  - variable: ANTHROPIC_MODEL
+    value: "claude-sonnet-4-5-latest"
+  - variable: BILL_EXTRACTION_PROVIDER
+    value: "auto"
+  - variable: DEMO_FALLBACK
+    value: "true"
+  - variable: ENERGY_OPTIMIZER_URL
+    value: "https://energy-optimizer-32292404002.europe-west1.run.app/recommend"

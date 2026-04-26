@@ -1,0 +1,13 @@
+.gcloudignore
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+.pytest_cache/
+*.log

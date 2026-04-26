@@ -1,8 +1,8 @@
 "use client";
 
-import { getApp, getApps, initializeApp } from "firebase/app";
+import { getApp, getApps, initializeApp, type FirebaseApp } from "firebase/app";
 import { getAnalytics, isSupported, type Analytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
+import { getAuth, type Auth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,13 +14,18 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-export const firebaseApp =
-  getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+const isFirebaseConfigured = Boolean(firebaseConfig.apiKey && firebaseConfig.projectId);
 
-export const firebaseAuth = getAuth(firebaseApp);
+export const firebaseApp: FirebaseApp | null = isFirebaseConfigured
+  ? getApps().length > 0
+    ? getApp()
+    : initializeApp(firebaseConfig)
+  : null;
+
+export const firebaseAuth: Auth | null = firebaseApp ? getAuth(firebaseApp) : null;
 
 export async function initializeFirebaseAnalytics(): Promise<Analytics | null> {
-  if (typeof window === "undefined") {
+  if (typeof window === "undefined" || !firebaseApp) {
     return null;
   }
 

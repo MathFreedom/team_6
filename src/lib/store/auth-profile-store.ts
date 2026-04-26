@@ -3,20 +3,37 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
+export interface AuthAddress {
+  street: string;
+  zipCode: string;
+  city: string;
+}
+
 interface AuthProfileState {
   uid: string | null;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: string;
-  address: string;
-  setProfile: (profile: Partial<Pick<AuthProfileState, "uid" | "email" | "phone" | "address">>) => void;
+  address: AuthAddress;
+  setProfile: (
+    profile: Partial<
+      Pick<
+        AuthProfileState,
+        "uid" | "firstName" | "lastName" | "email" | "phone" | "address"
+      >
+    >,
+  ) => void;
   resetProfile: () => void;
 }
 
 const initialState = {
   uid: null,
+  firstName: "",
+  lastName: "",
   email: "",
   phone: "",
-  address: "",
+  address: { street: "", zipCode: "", city: "" },
 };
 
 export const useAuthProfileStore = create<AuthProfileState>()(

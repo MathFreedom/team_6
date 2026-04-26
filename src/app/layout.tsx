@@ -1,30 +1,35 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { Manrope, Space_Grotesk } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import { AppHeader } from "@/components/layout/app-header";
-import { AppFooter } from "@/components/layout/app-footer";
 
 const bodyFont = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
 });
 
-const displayFont = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-display",
-});
-
 export const metadata: Metadata = {
-  title: "Nova - Mobile AI agent to cut your recurring charges",
-  description: "A guided mobile experience to connect your energy, compare the market and launch the right switch.",
+  title: "Nova",
+  description: "AI agent to reduce your electricity bill",
   applicationName: "Nova",
+  icons: {
+    icon: [{ url: "/icon", type: "image/png", sizes: "512x512" }],
+    shortcut: [{ url: "/icon", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
   appleWebApp: {
     capable: true,
     title: "Nova",
     statusBarStyle: "default",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -35,15 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bodyFont.variable} ${displayFont.variable} page-frame bg-background font-[var(--font-body)] text-foreground antialiased`}
+        className={`${bodyFont.variable} bg-white font-[var(--font-body)] text-[#0a1628] antialiased`}
       >
-        <Providers>
-          <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-3 pb-4 sm:px-5">
-            <AppHeader />
-            <main className="flex-1 py-4 sm:py-6">{children}</main>
-            <AppFooter />
-          </div>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

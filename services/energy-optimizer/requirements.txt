@@ -1,0 +1,9 @@
+# Backend service runtime. Streamlit and pandas are intentionally excluded
+# here — they belong to the development sandbox in `recherche/`, not to the
+# deployed Cloud Run image. Keep this list minimal to reduce cold start.
+fastapi>=0.110
+uvicorn[standard]>=0.27
+requests>=2.31
+crewai>=0.80
+anthropic>=0.40
+python-dotenv>=1.0

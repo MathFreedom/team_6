@@ -1,0 +1,1093 @@
+{
+  "fetched_at": "2026-04-25T20:57:43.844721Z",
+  "source": "https://comparateur-offres.energie-info.fr",
+  "n_providers": 23,
+  "n_offers": 78,
+  "n_calls": 69,
+  "failures": [],
+  "offers": [
+    {
+      "id": 16479,
+      "provider_id": 294,
+      "provider_name": "Alpiq",
+      "name": "OFFRE ELECTRICITE REFERENCE",
+      "description": "OFFRE ELECTRICITE REFERENCE - Abonnement : 141,60 € HT - prix du kWh  : 0,1256 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16604,
+      "provider_id": 294,
+      "provider_name": "Alpiq",
+      "name": "OFFRE ELECTRICITE STABLE",
+      "description": "OFFRE ELECTRICITE STABLE - Abonnement : 141,60 € HT - prix du kWh  : 0,1151 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16606,
+      "provider_id": 294,
+      "provider_name": "Alpiq",
+      "name": "OFFRE ELECTRICITE STABLE 100% VERTE",
+      "description": "OFFRE ELECTRICITE STABLE 100% VERTE - Abonnement : 141,60 € HT - prix du kWh  : 0,1201 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 15722,
+      "provider_id": 152,
+      "provider_name": "Alterna énergie",
+      "name": "Électricité verte 100 % française - Prix fixe 1 an",
+      "description": "Électricité verte 100 % française - Prix fixe 1 an - Abonnement : 132,84 € HT - prix du kWh  : 0,1141 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "132,84"
+      }
+    },
+    {
+      "id": 15725,
+      "provider_id": 152,
+      "provider_name": "Alterna énergie",
+      "name": "Électricité verte 100 % locale - Prix fixe 1 an et labellisée par l'ADEME",
+      "description": "Électricité verte 100 % locale - Prix fixe 1 an et labellisée par l'ADEME - Abonnement : 132,84 € HT - prix du kWh  : 0,1168 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "132,84"
+      }
+    },
+    {
+      "id": 16758,
+      "provider_id": 152,
+      "provider_name": "Alterna énergie",
+      "name": "Électricité verte Super Creuse - Prix fixe 1 an",
+      "description": "Électricité verte Super Creuse - Prix fixe 1 an - Abonnement : 149,74 € HT - prix du kWh HP (hiver) : 0,1434 € HT - prix du kWh HC (hiver) : 0,1214 € HT ... ",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "149,74"
+      }
+    },
+    {
+      "id": 16487,
+      "provider_id": 258,
+      "provider_name": "DYNEFF",
+      "name": "Contrat + Electricité",
+      "description": "Contrat + Electricité - Abonnement : 141,58 € HT - prix du kWh  : 0,1268 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,58"
+      }
+    },
+    {
+      "id": 16488,
+      "provider_id": 258,
+      "provider_name": "DYNEFF",
+      "name": "Contrat + Electricité Verte",
+      "description": "Contrat + Electricité Verte - Abonnement : 141,58 € HT - prix du kWh  : 0,1293 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,58"
+      }
+    },
+    {
+      "id": 16524,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "TEMPO",
+      "description": "TEMPO - Abonnement : 141,00 € HT - prix du kWh HP (Bleu) : 0,1035 € HT - prix du kWh HC (Bleu) : 0,0796 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,00",
+        "hp_bleu": "0,1035",
+        "hc_bleu": "0,0796"
+      }
+    },
+    {
+      "id": 6887,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Tarif Bleu - réglementé (particuliers)",
+      "description": "Tarif Bleu - réglementé (particuliers) - Abonnement : 141,60 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16659,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Vert Électrique",
+      "description": "Vert Électrique - Abonnement : 141,60 € HT - prix du kWh  : 0,1317 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16660,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Vert Électrique Auto",
+      "description": "Vert Électrique Auto - Abonnement : 141,60 € HT - prix du kWh Heures Pleines : 0,1589 € HT - prix du kWh Heures Creuses : 0,0795 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16661,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Vert Électrique Régional",
+      "description": "Vert Électrique Régional - Abonnement : 141,60 € HT - prix du kWh  : 0,1322 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16662,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Vert Électrique Week-End",
+      "description": "Vert Électrique Week-End - Abonnement : 141,60 € HT - prix du kWh Heures Semaine : 0,1450 € HT - prix du kWh Heures Week-End : 0,1015 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16792,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Zen Estival",
+      "description": "Zen Estival - Abonnement : 141,60 € HT - prix du kWh heures super creuses été : 0,0514 € HT - prix du kWh heures creuses été : 0,0778 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16818,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Zen Fixe",
+      "description": "Zen Fixe - Abonnement : 141,60 € HT - prix du kWh  : 0,1104 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16664,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Zen Online",
+      "description": "Zen Online - Abonnement : 141,60 € HT - prix du kWh  : 0,1247 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16665,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Zen Week-End",
+      "description": "Zen Week-End - Abonnement : 141,60 € HT - prix du kWh Heures Semaine : 0,1508 € HT - prix du kWh Heures Week-End : 0,1056 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16667,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Zen Week-End Plus",
+      "description": "Zen Week-End Plus - Abonnement : 141,60 € HT - prix du kWh Heures Semaine : 0,1489 € HT - prix du kWh Heures Week-End : 0,1042 € HT ... ",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16666,
+      "provider_id": 159,
+      "provider_name": "EDF",
+      "name": "Zen Week-End option Flex",
+      "description": "Zen Week-End option Flex - Abonnement : 141,60 € HT - prix du kWh HC classiques - Jour Eco : 0,1012 € HT - prix du kWh HC additionnelles - Jour Eco : 0,1012 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16777,
+      "provider_id": 168,
+      "provider_name": "ENGIE",
+      "name": "Elec Adapt 1 an",
+      "description": "Elec Adapt 1 an - Abonnement : 141,60 € HT - prix du kWh  : 0,1434 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16781,
+      "provider_id": 168,
+      "provider_name": "ENGIE",
+      "name": "Elec Référence Verte 3 ans",
+      "description": "Elec Référence Verte 3 ans - Abonnement : 138,36 € HT - prix du kWh  : 0,1390 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "138,36"
+      }
+    },
+    {
+      "id": 16877,
+      "provider_id": 168,
+      "provider_name": "ENGIE",
+      "name": "Elec Référence Verte 3 ans - Promo d'été",
+      "description": "Elec Référence Verte 3 ans - Promo d'été - Abonnement : 138,36 € HT - prix du kWh  : 0,1390 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "138,36"
+      }
+    },
+    {
+      "id": 16778,
+      "provider_id": 168,
+      "provider_name": "ENGIE",
+      "name": "Elec'Car 1 an",
+      "description": "Elec'Car 1 an - Abonnement : 141,60 € HT - prix du kWh Hp : 0,1828 € HT - prix du kWh Hc : 0,0914 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60",
+        "hp": "0,1828",
+        "hc": "0,0914"
+      }
+    },
+    {
+      "id": 16785,
+      "provider_id": 168,
+      "provider_name": "ENGIE",
+      "name": "Offre Electricité happ-e 1 an - Option Vertelec+",
+      "description": "Offre Electricité happ-e 1 an - Option Vertelec+ - Abonnement : 167,09 € HT - prix du kWh  : 0,1596 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "167,09"
+      }
+    },
+    {
+      "id": 16784,
+      "provider_id": 168,
+      "provider_name": "ENGIE",
+      "name": "Offre Electricité happ-e 1 an de ENGIE",
+      "description": "Offre Electricité happ-e 1 an de ENGIE - Abonnement : 137,21 € HT - prix du kWh  : 0,1596 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "137,21"
+      }
+    },
+    {
+      "id": 6539,
+      "provider_id": 260,
+      "provider_name": "Ekwateur",
+      "name": "Électricité 100% renouvelable - Prix fixe 1 an",
+      "description": "Électricité 100% renouvelable - Prix fixe 1 an - Abonnement : 141,60 € HT - prix du kWh  : 0,1207 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 14630,
+      "provider_id": 260,
+      "provider_name": "Ekwateur",
+      "name": "Électricité 100% renouvelable exclusive voiture électrique - Prix fixe 1 an",
+      "description": "Électricité 100% renouvelable exclusive voiture électrique - Prix fixe 1 an - Abonnement : 179,16 € HT - prix du kWh Hp : 0,1448 € HT - prix du kWh Hc : 0,0778 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "179,16",
+        "hp": "0,1448",
+        "hc": "0,0778"
+      }
+    },
+    {
+      "id": 16365,
+      "provider_id": 165,
+      "provider_name": "Enercoop",
+      "name": "FLEXIBILITE - 2 SAISONS + JOUR DE POINTE",
+      "description": "FLEXIBILITE - 2 SAISONS + JOUR DE POINTE - Abonnement : 134,16 € HT - prix du kWh Heures Pleines Hiver : 0,2062 € HT - prix du kWh Heures Creuses Hiver : 0,1540 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "134,16"
+      }
+    },
+    {
+      "id": 16368,
+      "provider_id": 165,
+      "provider_name": "Enercoop",
+      "name": "FLEXIBILITE - HEURES CREUSES",
+      "description": "FLEXIBILITE - HEURES CREUSES - Abonnement : 161,64 € HT - prix du kWh Hp : 0,1980 € HT - prix du kWh Hc : 0,1271 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "161,64",
+        "hp": "0,1980",
+        "hc": "0,1271"
+      }
+    },
+    {
+      "id": 16369,
+      "provider_id": 165,
+      "provider_name": "Enercoop",
+      "name": "FLEXIBILITE - NUIT & WEEK-END",
+      "description": "FLEXIBILITE - NUIT & WEEK-END - Abonnement : 136,80 € HT - prix du kWh Heures Pleines : 0,2132 € HT - prix du kWh Heures Creuses : 0,1055 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "136,80"
+      }
+    },
+    {
+      "id": 16366,
+      "provider_id": 165,
+      "provider_name": "Enercoop",
+      "name": "FLEXIBILITE- 2 SAISONS",
+      "description": "FLEXIBILITE- 2 SAISONS - Abonnement : 143,16 € HT - prix du kWh Heures Pleines Hiver : 0,2278 € HT - prix du kWh Heures Creuses Hiver : 0,1600 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "143,16"
+      }
+    },
+    {
+      "id": 16367,
+      "provider_id": 165,
+      "provider_name": "Enercoop",
+      "name": "OFFRE BASE",
+      "description": "OFFRE BASE - Abonnement : 133,08 € HT - prix du kWh  : 0,1801 € HT",
+      "tariff_types_seen": [
+        1
+      ],
+      "prices": {
+        "subscribing": "133,08"
+      }
+    },
+    {
+      "id": 15771,
+      "provider_id": 262,
+      "provider_name": "Energie d'ici",
+      "name": "100% locale & 100% renouvelable",
+      "description": "100% locale & 100% renouvelable - Abonnement : 145,06 € HT - prix du kWh BASE : 0,1426 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "145,06"
+      }
+    },
+    {
+      "id": 15773,
+      "provider_id": 262,
+      "provider_name": "Energie d'ici",
+      "name": "100% locale & 100% renouvelable Deux saisons",
+      "description": "100% locale & 100% renouvelable Deux saisons - Abonnement : 139,30 € HT - prix du kWh Heures Pleines Hiver : 0,1691 € HT - prix du kWh Heures Creuses Hiver : 0,1339 € HT ... ",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "139,30"
+      }
+    },
+    {
+      "id": 16626,
+      "provider_id": 204,
+      "provider_name": "GAZ DE BORDEAUX",
+      "name": "NOVAFIXE ELEC",
+      "description": "NOVAFIXE ELEC - Abonnement : 141,60 € HT - prix du kWh  : 0,1099 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16860,
+      "provider_id": 204,
+      "provider_name": "GAZ DE BORDEAUX",
+      "name": "NOVAFIXE ELEC - CODE BIENVENUE",
+      "description": "NOVAFIXE ELEC - CODE BIENVENUE - Abonnement : 141,60 € HT - prix du kWh  : 0,1099 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16445,
+      "provider_id": 204,
+      "provider_name": "GAZ DE BORDEAUX",
+      "name": "NOVAFLEX ELEC",
+      "description": "NOVAFLEX ELEC - Abonnement : 141,60 € HT - prix du kWh  : 0,1243 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16679,
+      "provider_id": 171,
+      "provider_name": "GEG Source d'Energies",
+      "name": "Mon Offre Elec Verte - fixe 3 ans",
+      "description": "Mon Offre Elec Verte - fixe 3 ans - Abonnement : 132,84 € HT - prix du kWh  : 0,1194 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "132,84"
+      }
+    },
+    {
+      "id": 16680,
+      "provider_id": 171,
+      "provider_name": "GEG Source d'Energies",
+      "name": "Mon Offre Elec Verte Direct Producteur -fixe 3 ans",
+      "description": "Mon Offre Elec Verte Direct Producteur -fixe 3 ans - Abonnement : 146,12 € HT - prix du kWh  : 0,1194 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "146,12"
+      }
+    },
+    {
+      "id": 16531,
+      "provider_id": 267,
+      "provider_name": "Mint Energie",
+      "name": "CLASSIC & GREEN",
+      "description": "CLASSIC & GREEN - Abonnement : 141,60 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16530,
+      "provider_id": 267,
+      "provider_name": "Mint Energie",
+      "name": "ONLINE & GREEN",
+      "description": "ONLINE & GREEN - Abonnement : 141,60 € HT - prix du kWh  : 0,1164 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16532,
+      "provider_id": 267,
+      "provider_name": "Mint Energie",
+      "name": "SMART & GREEN",
+      "description": "SMART & GREEN - Abonnement : 174,00 € HT - prix du kWh  : 0,1373 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "174,00"
+      }
+    },
+    {
+      "id": 16230,
+      "provider_id": 265,
+      "provider_name": "Octopus Energy",
+      "name": "Eco-conso fixe -2%",
+      "description": "Eco-conso fixe -2% - Abonnement : 141,60 € HT - prix du kWh  : 0,1282 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 15082,
+      "provider_id": 265,
+      "provider_name": "Octopus Energy",
+      "name": "Offre Véhicule Electrique : Octopus Go",
+      "description": "Offre Véhicule Electrique : Octopus Go - Abonnement : 141,60 € HT - prix du kWh KWh Heures Pleines HTT : 0,1468 € HT - prix du kWh KWh Heures Creuses HTT : 0,0734 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 15083,
+      "provider_id": 265,
+      "provider_name": "Octopus Energy",
+      "name": "Offre Véhicule électrique : Intelligent Octopus",
+      "description": "Offre Véhicule électrique : Intelligent Octopus - Abonnement : 141,60 € HT - prix du kWh kWh (HTT en €) : 0,1282 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 15732,
+      "provider_id": 278,
+      "provider_name": "Ohm Energie",
+      "name": "Ohm Classique",
+      "description": "Ohm Classique - Abonnement : 127,48 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "127,48"
+      }
+    },
+    {
+      "id": 16779,
+      "provider_id": 278,
+      "provider_name": "Ohm Energie",
+      "name": "Ohm Extra Eco Vert",
+      "description": "Ohm Extra Eco Vert - Abonnement : 149,49 € HT - prix du kWh  : 0,1112 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "149,49"
+      }
+    },
+    {
+      "id": 16593,
+      "provider_id": 278,
+      "provider_name": "Ohm Energie",
+      "name": "Ohm Fixe 2 ans",
+      "description": "Ohm Fixe 2 ans - Abonnement : 141,60 € HT - prix du kWh  : 0,1426 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 14522,
+      "provider_id": 278,
+      "provider_name": "Ohm Energie",
+      "name": "Ohm Modulo",
+      "description": "Ohm Modulo - Abonnement : 143,76 € HT - prix du kWh Heures Pleines Equilibre : 0,1454 € HT - prix du kWh Heures Creuses Equilibre : 0,0985 € HT ... ",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "143,76"
+      }
+    },
+    {
+      "id": 16686,
+      "provider_id": 278,
+      "provider_name": "Ohm Energie",
+      "name": "Ohm Premi'Ohm",
+      "description": "Ohm Premi'Ohm - Abonnement : 141,60 € HT - prix du kWh  : 0,1478 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 13532,
+      "provider_id": 278,
+      "provider_name": "Ohm Energie",
+      "name": "Ohm Week End",
+      "description": "Ohm Week End - Abonnement : 141,60 € HT - prix du kWh Heures Pleines de la semaine : 0,1685 € HT - prix du kWh Heures Creuses de la semaine : 0,1011 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 14491,
+      "provider_id": 151,
+      "provider_name": "Plenitude France",
+      "name": "Plenifix 1 an Electricité",
+      "description": "Plenifix 1 an Electricité - Abonnement : 165,60 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "165,60"
+      }
+    },
+    {
+      "id": 16570,
+      "provider_id": 151,
+      "provider_name": "Plenitude France",
+      "name": "Pleniweb Electricité",
+      "description": "Pleniweb Electricité - Abonnement : 165,60 € HT - prix du kWh  : 0,1243 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "165,60"
+      }
+    },
+    {
+      "id": 16816,
+      "provider_id": 257,
+      "provider_name": "Primeo Energie",
+      "name": "Offre Fixe Confort+",
+      "description": "Offre Fixe Confort+ - Abonnement : 148,68 € HT - prix du kWh  : 0,1046 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "148,68"
+      }
+    },
+    {
+      "id": 16817,
+      "provider_id": 257,
+      "provider_name": "Primeo Energie",
+      "name": "Offre Fixe Confort+ GREEN",
+      "description": "Offre Fixe Confort+ GREEN - Abonnement : 172,68 € HT - prix du kWh  : 0,1046 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "172,68"
+      }
+    },
+    {
+      "id": 16764,
+      "provider_id": 156,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Charge'Heures",
+      "description": "Offre Charge'Heures - Abonnement : 141,60 € HT - prix du kWh Heures Pleines : 0,1612 € HT - prix du kWh Heures Creuses : 0,1007 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16588,
+      "provider_id": 156,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Fixe 2 ans Electricité",
+      "description": "Offre Fixe 2 ans Electricité - Abonnement : 141,60 € HT - prix du kWh  : 0,1177 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16503,
+      "provider_id": 156,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Heures Eco Electricité",
+      "description": "Offre Heures Eco Electricité - Abonnement : 141,60 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16769,
+      "provider_id": 156,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Heures Eco+ Electricité",
+      "description": "Offre Heures Eco+ Electricité - Abonnement : 141,60 € HT - prix du kWh Heures Pleines : 0,1341 € HT - prix du kWh Heures Creuses : 0,0906 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16589,
+      "provider_id": 156,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Standard Fixe Electricité",
+      "description": "Offre Standard Fixe Electricité - Abonnement : 141,60 € HT - prix du kWh  : 0,1216 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16590,
+      "provider_id": 156,
+      "provider_name": "TotalEnergies",
+      "name": "Offre Verte Fixe Electricité",
+      "description": "Offre Verte Fixe Electricité - Abonnement : 141,60 € HT - prix du kWh  : 0,1243 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16550,
+      "provider_id": 277,
+      "provider_name": "Urban Solar Energy",
+      "name": "Essentielle - SMB particulier",
+      "description": "Essentielle - SMB particulier - Abonnement : 141,60 € HT - prix du kWh  : 0,1451 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "141,60"
+      }
+    },
+    {
+      "id": 16552,
+      "provider_id": 277,
+      "provider_name": "Urban Solar Energy",
+      "name": "Particulier avec Centrale Photovoltaïque",
+      "description": "Particulier avec Centrale Photovoltaïque - Abonnement : 151,20 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "151,20"
+      }
+    },
+    {
+      "id": 16471,
+      "provider_id": 172,
+      "provider_name": "Vattenfall",
+      "name": "ELECTRICITE Classique",
+      "description": "ELECTRICITE Classique - Abonnement : 151,56 € HT - prix du kWh  : 0,1308 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "151,56"
+      }
+    },
+    {
+      "id": 16472,
+      "provider_id": 172,
+      "provider_name": "Vattenfall",
+      "name": "ELECTRICITE Equilibre Verte",
+      "description": "ELECTRICITE Equilibre Verte - Abonnement : 151,56 € HT - prix du kWh  : 0,1242 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "151,56"
+      }
+    },
+    {
+      "id": 16473,
+      "provider_id": 172,
+      "provider_name": "Vattenfall",
+      "name": "Electricité Verte Sérénité",
+      "description": "Electricité Verte Sérénité - Abonnement : 151,56 € HT - prix du kWh  : 0,1177 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "151,56"
+      }
+    },
+    {
+      "id": 11799,
+      "provider_id": 298,
+      "provider_name": "elmy",
+      "name": "Electricité 100% verte, 100% française",
+      "description": "Electricité 100% verte, 100% française - Abonnement : 140,40 € HT - prix du kWh  : 0,1543 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "140,40"
+      }
+    },
+    {
+      "id": 16513,
+      "provider_id": 261,
+      "provider_name": "ilek",
+      "name": "Offre Voiture Électrique",
+      "description": "Offre Voiture Électrique - Abonnement : 264,12 € HT - prix du kWh HP : 0,1412 € HT - prix du kWh HC : 0,1007 € HT ... ",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "264,12"
+      }
+    },
+    {
+      "id": 16797,
+      "provider_id": 261,
+      "provider_name": "ilek",
+      "name": "Offre ÉnRFixe+ élec'",
+      "description": "Offre ÉnRFixe+ élec' - Abonnement : 232,80 € HT - prix du kWh  : 0,1407 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "232,80"
+      }
+    },
+    {
+      "id": 16574,
+      "provider_id": 269,
+      "provider_name": "la bellenergie",
+      "name": "Offre Constance - électricité verte - prix fixe 2 ans",
+      "description": "Offre Constance - électricité verte - prix fixe 2 ans - Abonnement : 152,64 € HT - prix du kWh  : 0,1125 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "152,64"
+      }
+    },
+    {
+      "id": 16577,
+      "provider_id": 269,
+      "provider_name": "la bellenergie",
+      "name": "Offre Constance avec Producteur EnR - Vertvolt",
+      "description": "Offre Constance avec Producteur EnR - Vertvolt - Abonnement : 152,64 € HT - prix du kWh  : 0,1208 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "152,64"
+      }
+    },
+    {
+      "id": 16575,
+      "provider_id": 269,
+      "provider_name": "la bellenergie",
+      "name": "Offre Garance - électricité verte - prix fixe 3 ans",
+      "description": "Offre Garance - électricité verte - prix fixe 3 ans - Abonnement : 162,60 € HT - prix du kWh  : 0,1125 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "162,60"
+      }
+    },
+    {
+      "id": 16578,
+      "provider_id": 269,
+      "provider_name": "la bellenergie",
+      "name": "Offre Garance avec Producteur EnR - Vertvolt",
+      "description": "Offre Garance avec Producteur EnR - Vertvolt - Abonnement : 162,60 € HT - prix du kWh  : 0,1208 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "162,60"
+      }
+    },
+    {
+      "id": 16576,
+      "provider_id": 269,
+      "provider_name": "la bellenergie",
+      "name": "Offre Prudence avec Producteur EnR - Vertvolt",
+      "description": "Offre Prudence avec Producteur EnR - Vertvolt - Abonnement : 132,60 € HT - prix du kWh  : 0,1208 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "132,60"
+      }
+    },
+    {
+      "id": 16573,
+      "provider_id": 269,
+      "provider_name": "la bellenergie",
+      "name": "Prudence - électricité verte - prix fixe 1 an",
+      "description": "Prudence - électricité verte - prix fixe 1 an - Abonnement : 132,60 € HT - prix du kWh  : 0,1125 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "132,60"
+      }
+    },
+    {
+      "id": 15800,
+      "provider_id": 307,
+      "provider_name": "mylight150",
+      "name": "MySmartBattery",
+      "description": "MySmartBattery - Abonnement : 151,20 € HT - prix du kWh Heures pleines : 0,1434 € HT - prix du kWh Heures creuses : 0,1063 € HT",
+      "tariff_types_seen": [
+        2
+      ],
+      "prices": {
+        "subscribing": "151,20"
+      }
+    },
+    {
+      "id": 13276,
+      "provider_id": 302,
+      "provider_name": "papernest energie",
+      "name": "Offre 100% renouvelable papernest energie",
+      "description": "Offre 100% renouvelable papernest energie - Abonnement : 308,08 € HT - prix du kWh  : 0,1528 € HT",
+      "tariff_types_seen": [
+        1,
+        2
+      ],
+      "prices": {
+        "subscribing": "308,08"
+      }
+    }
+  ]
+}

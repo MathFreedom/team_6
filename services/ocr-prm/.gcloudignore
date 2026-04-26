@@ -1,0 +1,9 @@
+.gcloudignore
+.git
+.gitignore
+.env
+.env.local
+__pycache__
+*.pyc
+.venv
+.DS_Store
