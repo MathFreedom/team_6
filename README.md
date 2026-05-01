@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <strong>AI agent for electricity cost optimization</strong><br />
+  <strong>AI agents for electricity cost optimization</strong><br />
   Hackathon MVP built with <code>Next.js</code>, combining a PWA flow, bill OCR, offer comparison, and a simulated provider switch.
 </p>
 
